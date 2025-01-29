@@ -27,7 +27,7 @@ user:
 # documents: https://github.com/utterance/utterances
 # API config: https://utteranc.es/
 comment_utteranc:
-  enable: true
+  enable: false
   repo: imyimang/blog # your blog repo
 
 
