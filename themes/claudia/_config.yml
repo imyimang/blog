@@ -1,0 +1,70 @@
+# main menu navigation
+menu:
+  Home: /
+  About: /about
+  Archive: /archives
+
+widgets:
+  - tag
+  - archive
+  - recent_posts
+  - category
+  - profile
+
+# social config
+social:
+  twitter: /imyimang
+  instagram: /yimang__
+  github: imyimang
+
+user:
+  name: yimang
+  avatar: images/avatar.png
+  location: Tapei, Taiwan
+  description: 
+  footnotes: # footnotes
+
+# documents: https://github.com/utterance/utterances
+# API config: https://utteranc.es/
+comment_utteranc:
+  enable: true
+  repo: imyimang/blog # your blog repo
+
+
+# documents: https://valine.js.org/quickstart.html
+comment_valine:
+  enable: false
+  appId:
+  appKey:
+
+comment_disqus:
+    enable: false
+    url:  # the url of your website main domain like this https://xxx.xxx/
+    name: # the short name in disqus
+
+# dark
+# light
+# user-can-set
+appearance: auto # Default value is auto
+
+# Miscellaneous
+favicon: 
+
+friend_links:
+  - title: 個人網站
+    link: https://who.isgay.tech/
+  - title: 超大咖託管
+    link: https://coffeehost.net/
+
+# Google Analytics
+ga_track_id:
+ga_domain:
+
+# Baidu Analytics
+ba_track_id:
+
+# picture of about page
+about_pic: avatar.png
+
+image_zoom:
+  enable: true

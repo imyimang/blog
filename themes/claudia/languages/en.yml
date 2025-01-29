@@ -1,0 +1,33 @@
+archive:
+  one: '封存'
+  other: '封存'
+
+category:
+  one: '分類'
+  other: '分類'
+
+tag:
+  one: '標籤'
+  other: '標籤'
+
+post:
+  one: '文章'
+  other: '文章'
+
+page:
+  one: '頁面'
+  other: '頁面'
+
+prev: '上一頁'
+next: '下一頁'
+
+all: '全部'
+home: '首頁'
+title: '標題'
+about: '關於'
+recent: '最新'
+read_more: '閱讀更多'
+user_name: '姓名'
+friends: '友站'
+click_back_to_the_top: '點擊回到頂端'
+search_input_placeholder: '搜尋內容…'
