@@ -1,4 +1,4 @@
-用Hexo + Vercel部屬的blog
+用 Hexo 部屬的blog
 
 https://vercel-blog-gules.vercel.app
 
