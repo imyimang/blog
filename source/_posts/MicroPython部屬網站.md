@@ -54,3 +54,5 @@ tags: '資訊'
 這樣我們就能在外網看到我們的網站了
 
 ![alt text](images/20250217/image4.png)
+
+更多應用可以至 Github 專案查看
