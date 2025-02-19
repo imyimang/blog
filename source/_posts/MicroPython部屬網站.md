@@ -3,14 +3,54 @@ title: 利用MicroPython在Pi Pico W部屬簡單靜態網站
 date: 2025-02-17 00:26:58
 tags: '資訊'
 ---
-今天嘗試了使用MicroPython在Pi Pico W部屬靜態網站
-![alt text](images/20250217/image.png)
+
+![alt text](images/20250217/imagee.png)
+## 環境安裝
+
+### MicroPython
+先至 [MicroPython](https://micropython.org/download/RPI_PICO_W/) 的網站下載固件
+
+按住板子上的Boot按鈕然後將USB插入電腦
+
+將固件放入板子的硬碟中
+
+### Thonny
+至 [Thonny官網](https://thonny.org/) 下載並安裝 Thonny
+
+將右下角的解釋器更改為板子的
+
+![alt text](images/20250217/1.png)
+
+## 部屬Web Server
+到我的 [Github](https://github.com/imyimang/PiPicoW-WebServer) 下載專案
+選擇左上角檔案 >> 開啟舊檔 >> 選擇專案的main.py
+
+填入wifi名稱和密碼
+
+點擊上方的運行
+
+現在網站應該成功部屬在內網了
+
 ![alt text](images/20250217/image2.png)
 
-詳細部屬過程可以參閱我的 [Github專案](https://github.com/imyimang/PiPicoW-WebServer)
-這塊開發版是好幾個月前買的，之前是拿來玩 [HID攻擊](https://github.com/imyimang/HID-Script)
-看到別人用其他開發版部屬Docker就想拿出來玩玩
-但Pi Pico W的配置實在太低(133 MHz CPU/264KB RAM)
-只好用他的WIFI模組架一個簡單的Web Server
+將網址輸入瀏覽器就能查看
 
-中間內網穿透搞了超久，結果發現是我自己response格式寫錯導致cloudflared tunnel會502 error
+![alt text](images/20250217/image.png)
+
+> [!NOTE]  
+> HTML的內容都能自行更改
+
+## 內網穿透
+我們可以使用 Cloudflared Tunnel 來構建免費的內網穿透
+
+在 CMD 輸入 `winget install --id Cloudflare.cloudflared` 來下載 Cloudflared
+
+下載後在 CMD 輸入 `cloudflared tunnel --url http://你的內網ip:80`
+
+他就會給你一個臨時的網址能夠訪問內網服務
+
+![alt text](images/20250217/image3.png)
+
+這樣我們就能在外網看到我們的網站了
+
+![alt text](images/20250217/image4.png)
