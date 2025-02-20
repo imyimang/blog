@@ -7,7 +7,7 @@ tags: '資訊'
 
 ## NASM
 到 [NASM](https://www.nasm.us/) 網站上下載並安裝 NASM
-將 NASM 的路徑加入[系統環境變數](https://m.php.cn/zh-tw/faq/1796500527.html) (預設應該是安裝在 `C:\Users\用戶名\AppData\Local\bin\NASM`)
+將 NASM 的路徑加入[系統環境變數Path](https://medium.com/@roan6903/windows-%E5%AE%89%E8%A3%9D-python-%E5%BE%8C-%E9%82%84%E9%9C%80%E8%A6%81%E8%A8%AD%E7%BD%AE%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8-217143b51344) (預設應該是安裝在 `C:\Users\用戶名\AppData\Local\bin\NASM`)
 加入後可以在 CMD 輸入
 ```cmd
 nasm -v
@@ -24,7 +24,7 @@ nasm -v
 pacman -Syu
 pacman -S mingw-w64-i686-gcc
 ```
-然後將 mingw32 加入系統環境變數(預設是安裝在 `C:\msys64\mingw32\bin`)
+然後將 mingw32 加入系統環境變數Path(預設是安裝在 `C:\msys64\mingw32\bin`)
 加入後重啟電腦
 然後在 CMD 輸入
 ```cmd
