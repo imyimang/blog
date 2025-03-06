@@ -49,7 +49,7 @@ gcc --version
             "command": "cmd",
             "args": [
                 "/c",
-                "nasm -f win32 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.o && gcc \"${fileDirname}/${fileBasenameNoExtension}.o\" -o \"${fileDirname}/${fileBasenameNoExtension}.exe\" -m32 && \"${fileDirname}/${fileBasenameNoExtension}.exe\""
+                "nasm -f win32 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.o && gcc \"${fileDirname}/${fileBasenameNoExtension}.o\" -o \"${fileDirname}/${fileBasenameNoExtension}.exe\" -m32 -nostartfiles -lmsvcrt && \"${fileDirname}/${fileBasenameNoExtension}.exe\""
             ],
             "problemMatcher": [],
             "group": {
