@@ -1,5 +1,5 @@
 ---
-title: 在Windows VSCode上執行x86 Assembly程式
+title: 在Windows VSCode上執行32-bit x86 Assembly程式
 date: 2025-02-20 22:56:14
 tags: '資訊'
 ---
