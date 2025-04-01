@@ -1,5 +1,5 @@
 ---
-title: italian_brainrot
+title: Italian Brainrot迷因統整、題目技巧
 date: 2025-04-01 21:00:13
 tags:
 ---
