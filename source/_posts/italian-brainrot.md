@@ -68,7 +68,7 @@ tags:
 ![alt text](images/20250401/it-5.png)
 
 ## Bobrito Bandito
-![alt text](images/20250401/it-6.png)
+![alt text](images/20250401/b.png)
 
 ## Clolchito Drestalchito
 ![alt text](images/20250401/it-7.png)
