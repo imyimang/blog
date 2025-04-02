@@ -22,4 +22,6 @@ layout: about
 
 📫 Email: [your.email@example.com](mailto:me@yimang.tw)
 
+<sub>上面應該很明顯是用ChatGPT生的吧<sub>
+
 
