@@ -48,7 +48,7 @@ comment_disqus:
 appearance: auto # Default value is auto
 
 # Miscellaneous
-favicon: 
+favicon: images/favicon.ico
 
 friend_links:
   - title: 個人網站
@@ -64,7 +64,7 @@ ga_domain:
 ba_track_id:
 
 # picture of about page
-about_pic: avatar.png
+about_pic: about.png
 
 image_zoom:
   enable: true
