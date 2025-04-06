@@ -22,6 +22,6 @@ layout: about
 
 📫 Email: [your.email@example.com](mailto:me@yimang.tw)
 
-<sub>btw左邊的照片是在紅樹林輕軌站拍的<sub>
+<sub>btw旁邊的照片是在紅樹林輕軌站拍的<sub>
 
 
