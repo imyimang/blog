@@ -56,6 +56,18 @@ sudo dpkg-reconfigure locales
 ![alt text](images/20250602/image-5.png)
 
 重啟後系統就是中文了
+
+如果重啟後又變回英文，可以嘗試
+```bash
+sudo vim /etc/default/locale
+```
+輸入
+```bash
+LANG=zh_TW.UTF-8
+LANGUAGE=zh_TW:zh
+LC_ALL=zh_TW.UTF-8
+```
+然後 :wq 儲存，再重新執行一次上面流程後重啟
 ## 3. 設定注音輸入法
 
 在 Terminal 執行以下
