@@ -45,6 +45,7 @@
   width: 0.625em;
 }
 
+
 .box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child),
 .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
   margin-bottom: 1.5rem;
@@ -3094,7 +3095,17 @@ a.tag:hover {
   vertical-align: middle;
 }
 
-.title {
+pre code .tag {
+  background: transparent !important;
+  color: inherit !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  display: inline !important;
+}
+
+.post-content > .title {
   color: #363636;
   font-size: 2rem;
   font-weight: 600;
@@ -3113,6 +3124,8 @@ a.tag:hover {
 .title:not(.is-spaced) + .subtitle {
   margin-top: -1.25rem;
 }
+
+
 
 .title.is-1 {
   font-size: 3rem;
@@ -3219,6 +3232,22 @@ a.tag:hover {
   padding: 0.25rem 0.5rem;
   text-align: center;
   vertical-align: top;
+}
+
+pre code .number {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width: auto !important;
+  display: inline !important;
+  font-size: inherit !important;
+  height: auto !important;
+  align-items: normal !important;
+  justify-content: normal !important;
+  vertical-align: baseline !important;
+  color: inherit !important;
+  box-shadow: none !important;
 }
 
 /* Bulma Form */
