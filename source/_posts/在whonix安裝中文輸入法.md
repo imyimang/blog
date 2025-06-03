@@ -106,3 +106,7 @@ ibus-setup
 ![alt text](images/20250602/image-1.png)
 
 這樣就能在 Whonix 輸入注音和顯示繁體中文了，按 `Win + Space` 來切換輸入法
+
+## 參考資料
+https://www.youtube.com/watch?v=pBZaFZMM5pI
+https://ruanjianlun.xyz/whonix-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/
