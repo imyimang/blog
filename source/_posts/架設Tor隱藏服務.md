@@ -25,7 +25,7 @@ Hello World!
 ```
 輸入
 ```bash
-python3 -m http.server 8080
+nohup python3 -m http.server 8080 > server.log 2>&1 &
 ```
 這樣你就有一個最簡單的靜態網頁部屬在 http://127.0.0.1:8080 了
 ![alt text](images/20250603/image.png)
