@@ -99,6 +99,14 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: claudia
 
+# Theme configuration
+theme_config:
+  social:
+    x: imyimang
+    instagram: yimang__
+    github: imyimang
+    telegram: imyimang
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

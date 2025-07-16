@@ -1,4 +1,5 @@
 @import url("//at.alicdn.com/t/font_2266068_otkvzqnxk0g.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 
 @import "common/variable";
 @import "themes/theme";
@@ -13,7 +14,7 @@
     a {
       color: inherit;
 
-      &:hover, &:hover .iconfont {
+      &:hover, &:hover .iconfont, &:hover .fab, &:hover .fas {
         text-decoration: none;
         color: $activeColor!important;
       }
@@ -51,6 +52,11 @@
       border-top: 1px solid rgba(0, 0, 0, 0.05);
 
       .sns-container .iconfont {
+        margin: 0 5px;
+        font-size: 30px;
+      }
+
+      .sns-container .fab, .sns-container .fas {
         margin: 0 5px;
         font-size: 30px;
       }

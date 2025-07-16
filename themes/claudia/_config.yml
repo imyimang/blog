@@ -13,9 +13,10 @@ widgets:
 
 # social config
 social:
-  twitter: /imyimang
-  instagram: /yimang__
+  x: imyimang
+  instagram: yimang__
   github: imyimang
+  telegram: imyimang
 
 user:
   name: yimang
