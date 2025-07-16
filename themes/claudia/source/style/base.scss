@@ -53,12 +53,17 @@
 
       .sns-container .iconfont {
         margin: 0 5px;
-        font-size: 30px;
+        font-size: 30px !important;
       }
 
       .sns-container .fab, .sns-container .fas {
         margin: 0 5px;
-        font-size: 30px;
+        font-size: 30px !important;
+      }
+
+      .sns-container i {
+        margin: 0 5px;
+        font-size: 30px !important;
       }
     }
   }
