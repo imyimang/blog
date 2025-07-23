@@ -28,7 +28,7 @@ Hello World!
 nohup python3 -m http.server 8080 > server.log 2>&1 &
 ```
 這樣你就有一個最簡單的靜態網頁部屬在 http://127.0.0.1:8080 了
-![alt text](images/20250603/image.png)
+![alt text](images/20250603/image.webp)
 
 ## 部屬 Tor 隱藏服務
 編輯設定檔
@@ -116,6 +116,6 @@ sudo cat /var/lib/tor/hidden_service2/hostname
 ## 訪問 Tor 隱藏服務
 下載 [Tor Browser](https://www.torproject.org/download/)
 選擇連接到 Tor 網路
-![alt text](images/20250603/image-1.png)
+![alt text](images/20250603/image-1.webp)
 連上之後輸入剛剛的.onion網址就可以訪問了
-![alt text](images/20250603/image-2.png)
+![alt text](images/20250603/image-2.webp)

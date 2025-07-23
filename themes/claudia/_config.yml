@@ -65,7 +65,7 @@ ga_domain:
 ba_track_id:
 
 # picture of about page
-about_pic: images/avatar.jpg
+about_pic: images/about.webp
 
 image_zoom:
   enable: true

@@ -6,16 +6,16 @@ tags: '資訊'
 ## 1. 下載並安裝 Whonix
 
 到 whonix 官網下載[虛擬機版本](https://www.whonix.org/wiki/VirtualBox#stable_Xfce)或映像檔
-![images](images/20250602/image1.png)
+![images](images/20250602/image1.webp)
 如果沒有安裝 VirtualBox 的下面也有安裝教學，本篇以虛擬機示範
 下載後點開.ova檔案就會自動匯入 VirtualBox 了
 
 先啟動 Gateway
-![images](images/20250602/image2.png)
+![images](images/20250602/image2.webp)
 啟動之後他會跳出一些安全提醒，就按 OK 或 yes 就好
 
 啟動 WorkStation
-![alt text](images/20250602/image3.png)
+![alt text](images/20250602/image3.webp)
 新版本 WorkStation 的 user 可能會沒有 sudo 權限，請依照[此篇文章](https://www.kicksecure.com/wiki/Unrestricted_admin_mode)操作
 重新啟動 WorkStation 時一直按 Shift 進入 GRUB，然後選擇 `REMOVE sysmaint-user-split | enable unrestricted admin mode` 就可以了
 
@@ -31,7 +31,7 @@ sudo apt-get install fonts-arphic-ukai
 sudo dpkg-reconfigure locales
 ```
 用方向鍵下選到最底選 zh_TW 那個，用空白鍵選定
-![alt text](images/20250602/image-2.png)
+![alt text](images/20250602/image-2.webp)
 
 按兩次 Enter 就會開始安裝了
 
@@ -50,10 +50,10 @@ sudo dpkg-reconfigure debconf
 sudo dpkg-reconfigure locales
 ```
 然後按 Enter 往下滑到底，輸入```zh_TW.UTF-8 UTF-8``` 對應的數字
-![alt text](images/20250602/image-4.png)
+![alt text](images/20250602/image-4.webp)
 
 然後再選擇 zh_TW 作為預設語言
-![alt text](images/20250602/image-5.png)
+![alt text](images/20250602/image-5.webp)
 
 重啟後系統就是中文了
 
@@ -101,9 +101,9 @@ ibus-daemon -drx
 ibus-setup
 ```
 選擇 Input Method
-![alt text](images/20250602/image.png)
+![alt text](images/20250602/image.webp)
 選擇 Add 搜尋 Chinese，然後選擇 Chewing 並按 Add
-![alt text](images/20250602/image-1.png)
+![alt text](images/20250602/image-1.webp)
 
 這樣就能在 Whonix 輸入注音和顯示繁體中文了，按 `Win + Space` 來切換輸入法
 

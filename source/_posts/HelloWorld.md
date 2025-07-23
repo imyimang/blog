@@ -12,4 +12,4 @@ categories:
 print("hello world")
 ```
 
-![cover](images/20250130/hello_world.png)
+![cover](images/20250130/hello_world.webp)

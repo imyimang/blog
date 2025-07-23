@@ -4,7 +4,7 @@ date: 2025-02-17 00:26:58
 tags: '資訊'
 ---
 
-![alt text](images/20250217/imagee.png)
+![alt text](images/20250217/imagee.webp)
 ## 環境安裝
 
 ### MicroPython
@@ -19,7 +19,7 @@ tags: '資訊'
 
 將右下角的解釋器更改為板子的
 
-![alt text](images/20250217/1.png)
+![alt text](images/20250217/1.webp)
 
 ## 部屬Web Server
 到我的 [Github](https://github.com/imyimang/PiPicoW-WebServer) 下載專案
@@ -31,11 +31,11 @@ tags: '資訊'
 
 現在網站應該成功部屬在內網了
 
-![alt text](images/20250217/image2.png)
+![alt text](images/20250217/image2.webp)
 
 將網址輸入瀏覽器就能查看
 
-![alt text](images/20250217/image.png)
+![alt text](images/20250217/image.webp)
 
 > [!NOTE]  
 > HTML的內容都能自行更改
@@ -49,10 +49,10 @@ tags: '資訊'
 
 他就會給你一個臨時的網址能夠訪問內網服務
 
-![alt text](images/20250217/image3.png)
+![alt text](images/20250217/image3.webp)
 
 這樣我們就能在外網看到我們的網站了
 
-![alt text](images/20250217/image4.png)
+![alt text](images/20250217/image4.webp)
 
 更多應用可以至 Github 專案查看

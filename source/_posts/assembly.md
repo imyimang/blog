@@ -14,7 +14,7 @@ nasm -v
 ```
 來查看是否設定成功
 如果設定成功應該如下
-![alt text](images/20250220/image.png)
+![alt text](images/20250220/image.webp)
 
 ## GCC
 下載並安裝 [MSYS2](https://www.msys2.org/)
@@ -31,7 +31,7 @@ pacman -S mingw-w64-i686-gcc
 gcc --version
 ```
 成功安裝應該顯示如下
-![alt text](images/20250220/image2.png)
+![alt text](images/20250220/image2.webp)
 
 ## VSCode
 進入 VSCode 並新增一個資料夾(路徑不要有中文)
@@ -82,4 +82,4 @@ _main:
     ret
 ```
 按下 `Ctrl+Shift+B` 他就會自動編譯並執行了
-![alt text](images/20250220/image3.png)
+![alt text](images/20250220/image3.webp)
