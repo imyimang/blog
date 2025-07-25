@@ -27,8 +27,14 @@ article.post-container.is-flex.is-justify-content-center.section.container.is-ma
                                         a(href= postURL)= post.title
                                 if post.date
                                     time.has-text-grey(datetime=post.date.toJSON())= date(post.date, date_format)
-                                p.is-flex-grow-2.mt-2
-                                    = truncate( strip_html(postContent), {length: 100, omission: '...'} )
+                                if post.excerpt && post.excerpt.length > 0
+                                    p.is-flex-grow-2.mt-2= post.excerpt
+                                else if post.content
+                                    p.is-flex-grow-2.mt-2
+                                        = truncate( strip_html(post.content), {length: 100, omission: '...'} )
+                                else
+                                    p.is-flex-grow-2.mt-2
+                                        br
                                 a.button.is-default.mt-2.has-text-weight-semibold(href= postURL)= __('read_more')
 
                     -

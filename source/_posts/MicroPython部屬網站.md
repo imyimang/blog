@@ -2,6 +2,7 @@
 title: 利用MicroPython在Pi Pico W部屬簡單靜態網站
 date: 2025-02-17 00:26:58
 tags: '資訊'
+excerpt: '在 Pi Pico W 上部屬一個能夠外網訪問的靜態網站'
 ---
 
 ![alt text](images/20250217/imagee.webp)
