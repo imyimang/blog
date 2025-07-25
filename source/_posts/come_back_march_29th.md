@@ -2,6 +2,7 @@
 title: 關於 @come_back_march_29th 這個帳號
 date: 2025-03-29 01:49:14
 tags: '幣圈'
+excerpt: '一個恰巧戳中演算法的迷因幣詐騙'
 ---
 # 前言
 關於 @come_back_march_29th 這個IG帳號，之前在reels就滑到了好幾次，影片內容是一個女生說3/29有什麼事要宣布叫大家記得
@@ -23,6 +24,6 @@ token地址:`v5cLWnJVjbDNUXfKY7BTqPX8DPG5HgjErHjnF94pump`
 進去是一個需要 Telegram 點數才能看的影片，看起來是想再割最後一波
 ![alt text](images/20250329/image-2.webp)
 
-# 反思
-原本還以為什麼大事結果是迷因幣割韭菜點點點
+# 心得
+原本還以為什麼大事結果又是迷因幣割韭菜點點點
 只能說這些搞垃圾幣割韭菜的真是沒下限zz
