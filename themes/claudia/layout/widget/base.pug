@@ -49,6 +49,10 @@ html(lang=config.language class= `appearance-${ appearance }`)
     <!-- 使用文章的 cover 圖片或第一張圖片作為 Open Graph 圖片 -->
     if page.cover
       meta(property="og:image" content=config.url + '/' + page.cover)
+    else if page._content && page._content.match(/!\[.*?\]\((.*?)\)/)
+      - var imageMatch = page._content.match(/!\[.*?\]\((.*?)\)/)
+      - var imagePath = imageMatch[1]
+      meta(property="og:image" content=(imagePath.startsWith('http') ? imagePath : config.url + '/' + imagePath))
     else if page.content && page.content.match(/!\[.*?\]\((.*?)\)/)
       - var imageMatch = page.content.match(/!\[.*?\]\((.*?)\)/)
       - var imagePath = imageMatch[1]
@@ -65,6 +69,10 @@ html(lang=config.language class= `appearance-${ appearance }`)
     
     if page.cover
       meta(name="twitter:image" content=config.url + '/' + page.cover)
+    else if page._content && page._content.match(/!\[.*?\]\((.*?)\)/)
+      - var imageMatch = page._content.match(/!\[.*?\]\((.*?)\)/)
+      - var imagePath = imageMatch[1]
+      meta(name="twitter:image" content=(imagePath.startsWith('http') ? imagePath : config.url + '/' + imagePath))
     else if page.content && page.content.match(/!\[.*?\]\((.*?)\)/)
       - var imageMatch = page.content.match(/!\[.*?\]\((.*?)\)/)
       - var imagePath = imageMatch[1]
