@@ -39,6 +39,40 @@ html(lang=config.language class= `appearance-${ appearance }`)
         })();
     <!-- End Baidu Analytics -->
 
+    <!-- Open Graph Meta Tags -->
+    meta(property="og:title" content=(page.title || config.title))
+    meta(property="og:description" content=(page.excerpt || page.description || config.description))
+    meta(property="og:type" content=(is_post() ? "article" : "website"))
+    meta(property="og:url" content=config.url + url_for(page.path))
+    meta(property="og:site_name" content=config.title)
+    
+    <!-- 使用文章的 cover 圖片或第一張圖片作為 Open Graph 圖片 -->
+    if page.cover
+      meta(property="og:image" content=config.url + '/' + page.cover)
+    else if page.content && page.content.match(/!\[.*?\]\((.*?)\)/)
+      - var imageMatch = page.content.match(/!\[.*?\]\((.*?)\)/)
+      - var imagePath = imageMatch[1]
+      meta(property="og:image" content=(imagePath.startsWith('http') ? imagePath : config.url + '/' + imagePath))
+    else if theme.user && theme.user.avatar
+      meta(property="og:image" content=config.url + '/' + theme.user.avatar)
+    
+    <!-- Twitter Card Meta Tags -->
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:site" content="@imyimang")
+    meta(name="twitter:creator" content="@imyimang")
+    meta(name="twitter:title" content=(page.title || config.title))
+    meta(name="twitter:description" content=(page.excerpt || page.description || config.description))
+    
+    if page.cover
+      meta(name="twitter:image" content=config.url + '/' + page.cover)
+    else if page.content && page.content.match(/!\[.*?\]\((.*?)\)/)
+      - var imageMatch = page.content.match(/!\[.*?\]\((.*?)\)/)
+      - var imagePath = imageMatch[1]
+      meta(name="twitter:image" content=(imagePath.startsWith('http') ? imagePath : config.url + '/' + imagePath))
+    else if theme.user && theme.user.avatar
+      meta(name="twitter:image" content=config.url + '/' + theme.user.avatar)
+    <!-- End Open Graph and Twitter Card -->
+
     link(rel="icon" href= url_for(theme.favicon))
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
     link(rel="stylesheet" href= url_for('/style/common/bulma.css'))
