@@ -69,3 +69,11 @@ about_pic: images/about.webp
 
 image_zoom:
   enable: true
+
+# Code copy button
+code_copy:
+  enable: true
+  style: # button style: icon, text
+    color: "#ffffff"
+    background: "#444444"
+    text: "複製"

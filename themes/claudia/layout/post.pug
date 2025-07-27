@@ -74,3 +74,14 @@ block script
         script(src= url_for("/js/jquery-fancybox.min.js"))
         script(src= url_for("/js/img_zoom.js"))
     script(src= url_for("/js/post.js"))
+    if theme.code_copy && theme.code_copy.enable
+        style.
+            .copy-btn {
+                background: #{theme.code_copy.style && theme.code_copy.style.background || '#444444'} !important;
+                color: #{theme.code_copy.style && theme.code_copy.style.color || '#ffffff'} !important;
+                border-color: #{theme.code_copy.style && theme.code_copy.style.background || '#444444'} !important;
+            }
+            .copy-btn:hover {
+                background: #555555 !important;
+                border-color: #555555 !important;
+            }

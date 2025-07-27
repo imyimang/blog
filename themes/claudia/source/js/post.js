@@ -166,6 +166,67 @@ var $posts = {
             appKey: el.dataset.comment_valine_key
         })
     },
+    addCodeCopyButtons: function() {
+        var codeBlocks = document.querySelectorAll('pre code, .highlight code');
+        
+        codeBlocks.forEach(function(codeBlock) {
+            var pre = codeBlock.closest('pre') || codeBlock.closest('.highlight');
+            if (!pre || pre.querySelector('.copy-btn')) return;
+            
+            var copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-btn';
+            copyBtn.innerHTML = '複製';
+            copyBtn.setAttribute('title', '複製');
+            
+            copyBtn.addEventListener('click', function() {
+                var text = codeBlock.textContent || codeBlock.innerText;
+                
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(function() {
+                        copyBtn.innerHTML = '已複製！';
+                        copyBtn.classList.add('copied');
+                        setTimeout(function() {
+                            copyBtn.innerHTML = '複製';
+                            copyBtn.classList.remove('copied');
+                        }, 2000);
+                    }).catch(function() {
+                        $posts.fallbackCopyTextToClipboard(text, copyBtn);
+                    });
+                } else {
+                    $posts.fallbackCopyTextToClipboard(text, copyBtn);
+                }
+            });
+            
+            pre.style.position = 'relative';
+            pre.appendChild(copyBtn);
+        });
+    },
+    fallbackCopyTextToClipboard: function(text, btn) {
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            var successful = document.execCommand('copy');
+            if (successful) {
+                btn.innerHTML = '已複製！';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.innerHTML = '複製';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }
+        } catch (err) {
+            console.error('複製失敗:', err);
+        }
+        
+        document.body.removeChild(textArea);
+    },
     mounted: function () {
         hljs && hljs.initHighlighting()
 
@@ -184,6 +245,11 @@ var $posts = {
         document.getElementById('postTopic').addEventListener('click', this.smoothScrollToTop)
 
         window.Valine && this.addValineComment()
+        
+        // Add code copy buttons if enabled
+        if (document.body.getAttribute('data-code-copy') === 'true') {
+            this.addCodeCopyButtons()
+        }
     }
 }
 

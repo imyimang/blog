@@ -135,3 +135,58 @@ $lineColor: var(--border-line-color);
     margin-top: -60px!important;
   }
 }
+
+// Code copy button styles
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #444444;
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: #555555;
+    color: #ffffff;
+    border-color: #444444;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  &.copied {
+    background: #4CAF50;
+    color: white;
+    border-color: #45a049;
+  }
+}
+
+pre:hover .copy-btn,
+.highlight:hover .copy-btn {
+  opacity: 1;
+}
+
+// Ensure code blocks have proper positioning
+pre,
+.highlight {
+  position: relative !important;
+}
+
+pre code,
+.highlight code {
+  display: block;
+  padding-right: 60px; // Make space for copy button
+}

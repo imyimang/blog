@@ -93,7 +93,7 @@ html(lang=config.language class= `appearance-${ appearance }`)
     script(src= url_for("/js/common.js"))
     block head
 
-  body.is-flex.is-flex-direction-column
+  body.is-flex.is-flex-direction-column(data-code-copy= theme.code_copy && theme.code_copy.enable ? 'true' : 'false')
     include widget-header
     main
       block content
