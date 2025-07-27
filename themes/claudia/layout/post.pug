@@ -1,9 +1,15 @@
 extends widget/base
 block append head
   link(rel='stylesheet', href= url_for('/style/post.css'))
-  link(rel='stylesheet', href= url_for('/style/themes/highlight-theme-light.css'))
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css')
   link(rel='stylesheet', href= url_for('/style/common/jquery.fancybox.min.css'))
-  script(src= url_for("/js/highlight.pack.js"))
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js')
   meta(name="description", content=truncate( strip_html(page.content), {length: 360, omission: '..'} ))
   if theme.comment_valine && theme.comment_valine.enable
       script(src="//unpkg.com/valine/dist/Valine.min.js")

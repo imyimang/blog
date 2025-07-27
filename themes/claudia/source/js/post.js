@@ -167,7 +167,7 @@ var $posts = {
         })
     },
     addCodeCopyButtons: function() {
-        var codeBlocks = document.querySelectorAll('pre code, .highlight code');
+        var codeBlocks = document.querySelectorAll('pre code, .highlight code, pre[class*="language-"] code');
         
         codeBlocks.forEach(function(codeBlock) {
             var pre = codeBlock.closest('pre') || codeBlock.closest('.highlight');
@@ -228,7 +228,7 @@ var $posts = {
         document.body.removeChild(textArea);
     },
     mounted: function () {
-        hljs && hljs.initHighlighting()
+        // PrismJS 會自動初始化，不需要手動調用
 
         var Scroller = this.scroller()
         var scrollerInstance = new Scroller()
