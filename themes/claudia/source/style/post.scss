@@ -58,11 +58,15 @@ $lineColor: var(--border-line-color);
     pre {
       padding: 0;
       background: transparent;
+      overflow-x: auto;
 
       code {
         padding: 15px;
         border: 1px solid $lineColor;
         background: var(--pre-code-bg-color);
+        white-space: pre;
+        overflow-wrap: normal;
+        word-break: normal;
       }
     }
 
@@ -185,6 +189,8 @@ pre,
 .highlight,
 pre[class*="language-"] {
   position: relative !important;
+  overflow-x: auto !important;
+  max-width: 100% !important;
 }
 
 pre code,
@@ -192,12 +198,16 @@ pre code,
 pre[class*="language-"] code {
   display: block;
   padding-right: 60px; // Make space for copy button
+  white-space: pre !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
 }
 
 // Fix PrismJS font rendering issues
 pre[class*="language-"] {
   text-shadow: none !important;
   font-weight: normal !important;
+  overflow-x: auto !important;
   
   code {
     text-shadow: none !important;
@@ -205,6 +215,9 @@ pre[class*="language-"] {
     font-family: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace !important;
     font-size: 14px !important;
     line-height: 1.5 !important;
+    white-space: pre !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
   }
 }
 
