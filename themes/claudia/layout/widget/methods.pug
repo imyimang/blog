@@ -13,3 +13,34 @@
 
         return coverImgElement[1]
     }
+
+    function getBlogStats() {
+        let totalWords = 0
+        let postCount = 0
+        let oldestDate = null
+        
+        // 使用 hexo-wordcount 插件統計所有文章
+        site.posts.forEach(function(post) {
+            if (post.content) {
+                // 使用 hexo-wordcount 的 wordcount 函數
+                totalWords += wordcount(post.content)
+                postCount++
+                
+                // 找到最早的文章日期
+                if (!oldestDate || post.date < oldestDate) {
+                    oldestDate = post.date
+                }
+            }
+        })
+        
+        // 計算運行天數
+        const today = new Date()
+        const runningDays = oldestDate ? Math.floor((today - oldestDate) / (1000 * 60 * 60 * 24)) : 0
+        
+        return {
+            totalWords: totalWords,
+            postCount: postCount,
+            runningDays: runningDays,
+            startDate: oldestDate
+        }
+    }

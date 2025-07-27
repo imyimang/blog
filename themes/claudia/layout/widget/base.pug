@@ -7,6 +7,8 @@
 - var pageTitle = page.title || theme.user && theme.user.name + "'s blog"
 - var appearance = theme.appearance ? theme.appearance : 'auto'
 
+include methods
+
 doctype html
 html(lang=config.language class= `appearance-${ appearance }`)
   head
@@ -108,6 +110,21 @@ html(lang=config.language class= `appearance-${ appearance }`)
           a(title="Hexo theme author" href='//github.com/haojen') Theme by Haojen&nbsp;
         div(style="margin-top: 2px")
           a(title="github-button" class="github-button" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true")
+      
+      // 部落格統計信息
+      - var stats = getBlogStats()
+      div.blog-stats.is-flex.is-justify-content-center.is-flex-direction-column.has-text-centered(style="margin-top: 10px; font-size: 0.85em; color: #666;")
+        div.is-flex.is-justify-content-center.is-flex-wrap-wrap
+          span.stats-item(style="margin: 0 8px;")
+            i.fas.fa-file-alt(style="margin-right: 4px;")
+            | 共 #{stats.postCount} 篇文章
+          span.stats-item(style="margin: 0 8px;")
+            i.fas.fa-font(style="margin-right: 4px;") 
+            | 總字數 #{stats.totalWords.toLocaleString()} 字
+          span.stats-item(style="margin: 0 8px;")
+            i.fas.fa-calendar-alt(style="margin-right: 4px;")
+            | 運行 #{stats.runningDays} 天
+      
       div
         span!= theme.user && theme.user.footnotes
 

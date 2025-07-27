@@ -65,6 +65,37 @@
         margin: 0 5px;
         font-size: 30px !important;
       }
+
+      // 部落格統計樣式
+      .blog-stats {
+        .stats-item {
+          display: inline-flex;
+          align-items: center;
+          white-space: nowrap;
+          margin: 2px 8px !important;
+          
+          i {
+            color: var(--second-text-color, #666);
+            opacity: 0.8;
+          }
+        }
+        
+        // 響應式設計
+        @media screen and (max-width: 768px) {
+          .stats-item {
+            margin: 2px 4px !important;
+            font-size: 0.8em;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          flex-direction: column !important;
+          
+          .stats-item {
+            margin: 2px 0 !important;
+          }
+        }
+      }
     }
   }
 }
