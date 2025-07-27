@@ -90,6 +90,11 @@ html(lang=config.language class= `appearance-${ appearance }`)
     link(rel="stylesheet" href= url_for('/style/common/bulma.css'))
     link(rel="stylesheet" href= url_for('/style/base.css'))
     link(rel="stylesheet" href= url_for('/style/common/helper.css'))
+    
+    // Content blocks CSS
+    if config.content_blocks && config.content_blocks.enable
+      style(type='text/css')!= content_blocks_css()
+    
     script(src= url_for("/js/common.js"))
     block head
 

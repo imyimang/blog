@@ -38,8 +38,9 @@ excerpt: '在 Pi Pico W 上部屬一個能夠外網訪問的靜態網站'
 
 ![alt text](images/20250217/image.webp)
 
-> [!NOTE]  
-> HTML的內容都能自行更改
+{% contentblock 提示 type:tip %}
+HTML的內容都能自行更改
+{% endcontentblock %}
 
 ## 內網穿透
 我們可以使用 Cloudflared Tunnel 來構建免費的內網穿透
