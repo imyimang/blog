@@ -96,6 +96,7 @@ html(lang=config.language class= `appearance-${ appearance }`)
       style(type='text/css')!= content_blocks_css()
     
     script(src= url_for("/js/common.js"))
+    script(src= url_for("/js/theme-toggle.js"))
     block head
 
   body.is-flex.is-flex-direction-column(data-code-copy= theme.code_copy && theme.code_copy.enable ? 'true' : 'false')

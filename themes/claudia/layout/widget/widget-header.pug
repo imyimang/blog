@@ -5,14 +5,22 @@ header.header-widget.is-flex-shrink-0.is-hidden-mobile
                 a(href= url_for("/"))= (theme.user && theme.user.name || config.author) + "'s blog"
         h3.is-hidden-mobile.is-family-serif.is-full-height.is-flex.is-align-items-center.is-flex-shrink-0
             block topic
-        aside.is-flex-shrink-0
+        aside.is-flex-shrink-0.is-flex.is-align-items-center
             if theme.menu
                 each url, label in theme.menu
                     h3.is-inline-block
                         a(href= url_for(url))= label && _p(label.toLowerCase())
+            // Dark mode toggle button
+            button.theme-toggle.is-flex.is-align-items-center.is-justify-content-center(id="theme-toggle" title="切換深色/淺色模式")
+                i.fas.fa-moon(id="theme-icon")
 header.is-flex.header-widget.is-flex-shrink-0.is-align-items-center.is-justify-content-center.is-hidden-tablet
-        if theme.menu
-            each url, label in theme.menu
-                h3.is-inline-block
-                    a(href= url_for(url))= label && _p(label.toLowerCase())
+    .is-flex.is-align-items-center.is-justify-content-space-between.is-fullwidth
+        nav.is-flex.is-align-items-center
+            if theme.menu
+                each url, label in theme.menu
+                    h3.is-inline-block
+                        a(href= url_for(url))= label && _p(label.toLowerCase())
+        // Dark mode toggle button for mobile
+        button.theme-toggle.is-flex.is-align-items-center.is-justify-content-center(id="theme-toggle-mobile" title="切換深色/淺色模式")
+            i.fas.fa-moon(id="theme-icon-mobile")
 
