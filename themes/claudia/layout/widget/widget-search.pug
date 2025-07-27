@@ -31,6 +31,14 @@ style.
         color: #3273dc!important;
     }
 
+    .search-highlight {
+        background-color: #ffeb3b;
+        color: #333;
+        padding: 1px 2px;
+        border-radius: 2px;
+        font-weight: bold;
+    }
+
 main.aside-card-container.search-widget.is-relative
     label(for="searchInput")
         div#searchButton.is-flex.px-4
@@ -72,8 +80,8 @@ script.
             var content = document.createElement('p')
 
             title.className = 'mb-1'
-            title.innerText = item.title
-            content.innerText = item.content
+            title.innerHTML = highlightText(item.title, item.searchKeys)
+            content.innerHTML = highlightText(item.content, item.searchKeys)
 
             link.href = item.link
             link.appendChild(title)
@@ -102,6 +110,26 @@ script.
         searchResultEl.style.height = 'auto'
     }
 
+    function highlightText(text, searchKeys) {
+        var highlightedText = text
+        searchKeys.forEach(function(key) {
+            var regex = new RegExp('(' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi')
+            highlightedText = highlightedText.replace(regex, '<span class="search-highlight">$1</span>')
+        })
+        return highlightedText
+    }
+
+    function removeCodeBlocks(content) {
+        // 移除代碼區塊（三個反引號包圍的內容）
+        content = content.replace(/```[\s\S]*?```/g, ' ')
+        // 移除行內代碼（單個反引號包圍的內容）
+        content = content.replace(/`[^`]*`/g, ' ')
+        // 移除HTML代碼標籤內容
+        content = content.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, ' ')
+        content = content.replace(/<pre[^>]*>[\s\S]*?<\/pre>/gi, ' ')
+        return content
+    }
+
     function searching(inputText) {
         var inputTexts = inputText.trim().split(' ').filter(function(text) {
             return text.trim() !== ''
@@ -116,7 +144,10 @@ script.
                 var title = entry.getElementsByTagName('title')[0].textContent
                 var link = entry.getElementsByTagName('link')[0].getAttribute('href')
                 var contentWithTags = entry.getElementsByTagName('content')[0].textContent
-                var rawContent = contentWithTags.trim().replace(/<[^>]+>/g, '').toLowerCase()
+                
+                // 移除代碼區塊後再進行搜尋
+                var contentWithoutCode = removeCodeBlocks(contentWithTags)
+                var rawContent = contentWithoutCode.trim().replace(/<[^>]+>/g, '').toLowerCase()
 
                 // 檢查標題或內容是否包含搜尋關鍵詞
                 var titleMatch = title.toLowerCase().indexOf(key) > -1
@@ -143,7 +174,8 @@ script.
                     searchResults.push({
                         link: link,
                         title: title,
-                        content: finalContent
+                        content: finalContent,
+                        searchKeys: inputTexts
                     })
                     addedItems.add(link)
                 }
