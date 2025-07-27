@@ -1,33 +1,30 @@
 archive:
-  one: '存檔'
-  other: '存檔'
+  one: 'Archive'
+  other: 'Archives'
 
 category:
-  one: '分類'
-  other: '分類'
-
+  one: 'Category'
+  other: 'Categories'
 tag:
-  one: '標籤'
-  other: '標籤'
-
+  one: 'Tag'
+  other: 'Tags'
 post:
-  one: '文章'
-  other: '文章'
-
+  one: 'Post'
+  other: 'Posts'
 page:
-  one: '頁面'
-  other: '頁面'
+  one: 'Page'
+  other: 'Pages'
+prev: 'Previous'
+next: 'Next'
 
-prev: '上一頁'
-next: '下一頁'
+all: 'All'
+home: 'Home'
+title: 'Title'
+about: 'About'
+recent: 'Recent'
+friends: 'Friends'
+read_more: 'Read more'
+user_name: 'User name'
+click_back_to_the_top: 'Click back to the top'
 
-all: '全部'
-home: '首頁'
-title: '標題'
-about: '關於'
-recent: '最新'
-read_more: '閱讀更多'
-user_name: '姓名'
-friends: '友站'
-click_back_to_the_top: '點擊回到頂端'
-search_input_placeholder: '搜尋內容…'
+search_input_placeholder: 'Search everything..'
