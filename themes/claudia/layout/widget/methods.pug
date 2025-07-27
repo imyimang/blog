@@ -2,7 +2,8 @@
     function getPostCoverImg(post) {
         // 優先使用 Front Matter 中的 cover 欄位
         if (post.cover) {
-            return post.cover
+            // 使用 url_for 處理相對路徑
+            return url_for(post.cover)
         }
         
         // 如果沒有 cover 欄位，則使用文章內容中的第一張圖片
@@ -11,7 +12,7 @@
 
         if (!coverImgElement) return false
 
-        return coverImgElement[1]
+        return url_for(coverImgElement[1])
     }
 
     function getBlogStats() {
