@@ -25,8 +25,13 @@ block content
                             a(href= url_for(`/tags/${tag.name}`))
                                 i.tag.post-item-tag= tag.name
                 h1.mt-0.mb-1.is-family-serif#postTitle= page.title
-                if page.date
-                    time.has-text-grey(datetime=page.date.toJSON())= date(page.date, date_format)
+                .post-meta.mb-3
+                    if page.date
+                        time.has-text-grey(datetime=page.date.toJSON())= date(page.date, date_format)
+                    span.has-text-grey.mx-2 |
+                    span.has-text-grey 字數: #{wordcount(page.content)}
+                    span.has-text-grey.mx-2 |
+                    span.has-text-grey 閱讀時間: #{min2read(page.content)} 分鐘
                 article.mt-2.post-content!= page.content
                 section.jump-container.is-flex.is-justify-content-space-between.my-6
                     // em is empty placeholder

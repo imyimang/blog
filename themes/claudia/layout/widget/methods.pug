@@ -20,17 +20,17 @@
         let postCount = 0
         let oldestDate = null
         
-        // 使用 hexo-wordcount 插件統計所有文章
+        // 繼續使用 hexo-wordcount 插件統計總字數
         site.posts.forEach(function(post) {
             if (post.content) {
                 // 使用 hexo-wordcount 的 wordcount 函數
                 totalWords += wordcount(post.content)
-                postCount++
-                
-                // 找到最早的文章日期
-                if (!oldestDate || post.date < oldestDate) {
-                    oldestDate = post.date
-                }
+            }
+            postCount++
+            
+            // 找到最早的文章日期
+            if (!oldestDate || post.date < oldestDate) {
+                oldestDate = post.date
             }
         })
         

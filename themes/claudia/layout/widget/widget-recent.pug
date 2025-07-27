@@ -15,6 +15,9 @@ main.aside-card-container.recent-widget
                     section.is-flex-grow-2
                         p.has-text-weight-semibold(style= "line-height: 20px; font-size: 14px")
                             a(href=url_for(post.path))= post.title || __('title')
-                        if post.date
-                            time(datetime=post.date.toJSON()).has-text-weight-semibold.has-text-grey
-                                = date(post.date, date_format)
+                        .post-meta(style="font-size: 12px;")
+                            if post.date
+                                time(datetime=post.date.toJSON()).has-text-weight-semibold.has-text-grey
+                                    = date(post.date, date_format)
+                            span.has-text-grey.mx-1 |
+                            span.has-text-grey #{min2read(post.content)} 分鐘
