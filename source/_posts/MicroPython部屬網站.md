@@ -30,7 +30,6 @@ excerpt: '在 Pi Pico W 上部屬一個能夠外網訪問的靜態網站'
 
 點擊上方的運行
 
-
 現在網站應該成功部屬在內網了
 
 ![alt text](images/20250217/image2.webp)
