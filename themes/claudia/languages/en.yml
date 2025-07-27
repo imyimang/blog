@@ -28,3 +28,4 @@ user_name: 'User name'
 click_back_to_the_top: 'Click back to the top'
 
 search_input_placeholder: 'Search everything..'
+search_no_results: 'No results found'

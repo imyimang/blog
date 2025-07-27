@@ -57,6 +57,8 @@ script.
 
         if (searchResults.length > 0) {
             renderSearchResults(searchResults)
+        } else {
+            renderNoResults()
         }
     }
 
@@ -85,13 +87,29 @@ script.
         searchResultEl.style.height = 'auto'
     }
 
-    function searching(inputText) {
-        var inputTexts = inputText.split(' ')
-        var searchResults = []
-        inputTexts.forEach(function (searchKey) {
-            var haveSearchValue = Boolean(searchKey.trim())
-            if (!haveSearchValue) return
+    function renderNoResults() {
+        searchResultEl.innerHTML = null
+        var noResultsDiv = document.createElement('div')
+        noResultsDiv.className = 'p-4 has-text-centered'
+        noResultsDiv.style.color = 'var(--second-text-color)'
+        
+        // 根據語言顯示不同的文字
+        var language = document.documentElement.lang || 'en'
+        var noResultsText = language.includes('zh') ? '沒有找到相關結果' : 'No results found'
+        noResultsDiv.innerText = noResultsText
+        
+        searchResultEl.appendChild(noResultsDiv)
+        searchResultEl.style.height = 'auto'
+    }
 
+    function searching(inputText) {
+        var inputTexts = inputText.trim().split(' ').filter(function(text) {
+            return text.trim() !== ''
+        })
+        var searchResults = []
+        var addedItems = new Set() // 防止重複結果
+
+        inputTexts.forEach(function (searchKey) {
             var key = searchKey.toLowerCase()
 
             for (var entry of searchDatabase) {
@@ -100,29 +118,34 @@ script.
                 var contentWithTags = entry.getElementsByTagName('content')[0].textContent
                 var rawContent = contentWithTags.trim().replace(/<[^>]+>/g, '').toLowerCase()
 
-                var LENGTH = 80
-                var finalContent = ''
-                var contentLength = rawContent.length
-                var searchResultIdx = rawContent.indexOf(key)
+                // 檢查標題或內容是否包含搜尋關鍵詞
+                var titleMatch = title.toLowerCase().indexOf(key) > -1
+                var contentMatch = rawContent.indexOf(key) > -1
 
-                var startIdx = searchResultIdx - 20,
-                    endIdx = startIdx + LENGTH
+                if ((titleMatch || contentMatch) && !addedItems.has(link)) {
+                    var LENGTH = 80
+                    var finalContent = ''
+                    var contentLength = rawContent.length
+                    var searchResultIdx = rawContent.indexOf(key)
 
-                if (startIdx < 0) {
-                    startIdx = 0
-                    endIdx = 100
-                }
+                    var startIdx = searchResultIdx - 20,
+                        endIdx = startIdx + LENGTH
 
-                endIdx > contentLength && (endIdx = contentLength)
+                    if (startIdx < 0) {
+                        startIdx = 0
+                        endIdx = 100
+                    }
 
-                finalContent = rawContent.substring(startIdx, endIdx)
+                    endIdx > contentLength && (endIdx = contentLength)
 
-                if (title.indexOf(key) > -1 || searchResultIdx > -1) {
+                    finalContent = rawContent.substring(startIdx, endIdx)
+
                     searchResults.push({
                         link: link,
                         title: title,
                         content: finalContent
                     })
+                    addedItems.add(link)
                 }
             }
         })
