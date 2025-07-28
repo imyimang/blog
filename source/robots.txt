@@ -3,14 +3,3 @@ Allow: /
 
 # Sitemap
 Sitemap: http://blog.yimang.tw/sitemap.xml
-
-# 禁止爬取這些目錄
-Disallow: /admin/
-Disallow: /tmp/
-Disallow: /*.json$
-
-# 允許搜尋引擎爬取所有內容
-Allow: /archives/
-Allow: /tags/
-Allow: /categories/
-Allow: /about/
