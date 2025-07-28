@@ -89,6 +89,50 @@ tags: [測試, content-blocks]
 這是引用類型的內容塊，用於顯示引言或引用的內容。
 {% endcontentblock %}
 
+## Hexo Spoiler 插件測試
+
+### 基本 Spoiler 功能
+
+這個段落包含一些 {% spoiler 劇透內容，點擊查看 %} 的例子。
+
+### 自定義樣式的 Spoiler
+
+這裡有一個模糊效果的劇透：{% spoiler style:blur 電影結局：主角最後拯救了世界 %}
+
+這裡有一個方框效果的劇透：{% spoiler style:box 隱藏的秘密：寶藏在古老的橡樹下 %}
+
+### 帶顏色的方框 Spoiler
+
+紅色方框劇透：{% spoiler style:box color:red 危險警告：不要獨自進入森林 %}
+
+藍色方框劇透：{% spoiler style:box color:blue 提示：答案在書的第42頁 %}
+
+### 段落模式的 Spoiler
+
+{% spoiler p:true style:box color:green 這是一個段落模式的劇透，它會被包裹在 <p> 標籤中，前後會有換行。這種模式適合較長的文本內容。 %}
+
+### 懸停顯示的 Spoiler
+
+將滑鼠懸停在這裡查看內容：{% spoiler hover:true style:blur 懸停即可看到的秘密訊息 %}
+
+### 代碼相關的 Spoiler
+
+問題：如何在 JavaScript 中反轉一個字符串？
+
+{% spoiler style:box color:gray function reverseString(str) { return str.split('').reverse().join(''); } %}
+
+### 組合多種選項的 Spoiler
+
+完整配置的劇透：{% spoiler style:box color:purple p:true hover:true 這個劇透結合了方框樣式、紫色背景、段落模式和懸停顯示功能。滑鼠懸停即可查看內容！ %}
+
+### 多個 Spoiler 組合
+
+劇透警告！以下內容包含多個劇透：
+
+- 第一個劇透：{% spoiler style:blur 角色A在第三章中會離開隊伍 %}
+- 第二個劇透：{% spoiler style:box color:orange 在城堡的地下室可以找到傳說中的武器 %}
+- 第三個劇透：{% spoiler style:box color:red hover:true 看起來善良的導師實際上是最終Boss %}
+
 ## 總結
 
 hexo-content-blocks 插件為您的 Hexo 部落格添加了豐富的內容塊功能，讓您可以：
