@@ -58,3 +58,4 @@ export default {
 
 我們回到 Fluent Reader 用這串網址新增 RSS 訂閱就能成功訂閱 FeedBurner 的 RSS 了
 ![alt text](images/20250728/image-8.webp)
+![alt text](images/20250728/image-9.webp)
