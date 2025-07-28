@@ -4,12 +4,12 @@
 
 # Site
 title: yimang's blog
-subtitle: ''
-description: 'yimang的部落格'
-keywords: 'yimang, hexo, blog, programming, technology'
+subtitle: '技術、程式、日常、加密貨幣'
+description: 'yimang的部落格，分享程式開發、加密貨幣與生活。'
+keywords: 'yimang, hexo, blog, programming, technology, crypto, 部落格, 程式, 科技, 加密貨幣, 開發, 教學'
 author: yimang
 language: zh-tw
-timezone: ''
+timezone: Asia/Taipei
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
