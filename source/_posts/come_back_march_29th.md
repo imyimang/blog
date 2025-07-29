@@ -1,7 +1,7 @@
 ---
 title: 關於 @come_back_march_29th 這個帳號
 date: 2025-03-29 01:49:14
-tags: '幣圈'
+category: '幣圈'
 excerpt: '一個恰巧戳中演算法的迷因幣詐騙'
 cover: images/20250329/image.webp
 ---
