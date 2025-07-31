@@ -2,7 +2,7 @@
 title: 如何解決 Fluent Reader 新增 FeedBurner RSS 時遇到 403 錯誤的問題?
 date: 2025-07-28 23:34:34
 category: '資訊'
-tag: [Fluent Reader, Cloudflare Workers, RSS]
+tag: [Cloudflare-Workers, RSS]
 excerpt: '用 Cloudflare Workers 解決用 Fluent Reader 新增 FeedBurner RSS 時遇到 403 錯誤的問題'
 ---
 ## 前言
