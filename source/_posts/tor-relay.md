@@ -20,7 +20,7 @@ Tor 網路歡迎所有人來架設 Tor Relay 增加整體網路的匿名性和�
 只要用閒置的 VPS 或主機進行簡單幾步設定，就能為網路隱私貢獻一份心力
 
 ## 準備
-首先我們需要準備一台 Linux 環境的機器，以下用 Ubuntu舉例
+首先我們需要準備一台 Linux 環境的機器，以下用 Ubuntu 舉例
 
 如果你沒有閒置機器想買台 VPS 的話，可以考慮用 [Google Cloud Platform](https://console.cloud.google.com/?hl=zh-tw)，有 90 天 300 美金的滿免費額度，需要信用卡驗證
 如果沒有信用卡，推薦用 [MoonX](https://paywithmoon.com/) 這張卡，支援加密貨幣加值，可以加個 5 美金進去(建議不要當日常使用，這張卡手續費高得離譜，但是卡頭是 credit 所以拿來驗證很方便)

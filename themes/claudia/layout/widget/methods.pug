@@ -15,16 +15,66 @@
         return url_for(coverImgElement[1])
     }
 
+    function getAccurateWordCount(content) {
+        if (!content) return 0
+
+        // 移除 HTML 標籤
+        let cleanContent = content.replace(/<[^>]*>/g, '').trim()
+
+        // 中文字（含漢字範圍）
+        const chineseChars = (cleanContent.match(/[\u4e00-\u9fff]/g) || []).length
+
+        // 數字（0-9）
+        const numbers = (cleanContent.match(/[0-9]/g) || []).length
+
+        // 英文單詞（排除中文與數字後分割）
+        const englishContent = cleanContent.replace(/[\u4e00-\u9fff0-9]/g, ' ')
+        const englishWords = (englishContent.match(/[a-zA-Z]+/g) || []).length
+
+        return chineseChars + englishWords + numbers
+    }
+
+    function getAccurateWordStats(content) {
+        if (!content) return { chinese: 0, english: 0, numbers: 0, total: 0 }
+        
+        // 移除 HTML 標籤
+        let cleanContent = content.replace(/<[^>]*>/g, '').trim()
+
+        // 中文字（含漢字範圍）
+        const chineseChars = (cleanContent.match(/[\u4e00-\u9fff]/g) || []).length
+
+        // 數字（0-9）
+        const numbers = (cleanContent.match(/[0-9]/g) || []).length
+
+        // 英文單詞（排除中文與數字後分割）
+        const englishContent = cleanContent.replace(/[\u4e00-\u9fff0-9]/g, ' ')
+        const englishWords = (englishContent.match(/[a-zA-Z]+/g) || []).length
+        
+        return {
+            chinese: chineseChars,
+            english: englishWords,
+            numbers: numbers,
+            total: chineseChars + englishWords + numbers
+        }
+    }
+
+    function getAccurateReadTime(content, cnSpeed = 250, enSpeed = 150) {
+        const stats = getAccurateWordStats(content)
+        // 數字不計入閱讀速度，只計算中文和英文
+        const readingTime = stats.chinese / cnSpeed + stats.english / enSpeed
+        return readingTime < 1 ? 1 : Math.round(readingTime)
+    }
+
     function getBlogStats() {
         let totalWords = 0
         let postCount = 0
         let oldestDate = null
         
-        // 繼續使用 hexo-wordcount 插件統計總字數
+        // 統計文章數量、總字數和最早日期
         site.posts.forEach(function(post) {
             if (post.content) {
-                // 使用 hexo-wordcount 的 wordcount 函數
-                totalWords += wordcount(post.content)
+                // 使用統一的字數統計邏輯
+                totalWords += getAccurateWordCount(post.content)
             }
             postCount++
             

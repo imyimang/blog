@@ -20,4 +20,4 @@ main.aside-card-container.recent-widget
                                 time(datetime=post.date.toJSON()).has-text-weight-semibold.has-text-grey
                                     = date(post.date, date_format)
                             span.has-text-grey.mx-1 |
-                            span.has-text-grey #{min2read(post.content, {cn: 250, en: 150})} 分鐘
+                            span.has-text-grey #{getAccurateReadTime(post.content, 250, 150)} 分鐘
