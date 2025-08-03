@@ -32,6 +32,8 @@ Tor 網路歡迎所有人來架設 Tor Relay 增加整體網路的匿名性和�
 
 你可以參考[這篇文章](https://community.torproject.org/relay/community-resources/good-bad-isps/)，介紹了一些對 Tor Relay 友善的 VPS 廠商
 
+也可以看看 [我運行的 Tor Relays](https://www.yimang.tw/tor-relay.html)
+
 ## 架設
 安裝 Tor
 ```bash
