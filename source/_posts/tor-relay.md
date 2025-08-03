@@ -226,9 +226,46 @@ Bridge obfs4 193.57.136.119:443 922FC5AF7C91143E6B8FA3420F732FC63374A32B cert=pB
 ## FAQ
 ### Tor 版本過舊
 當你使用 Ubuntu 用 APT 下載 Tor 時，有時候會遇到 Tor 版本過舊而不被網路接納的問題
-你可以使用
+你可以等待節點運行一段時間後使用
 ```bash
-sudo systemctl status tor@default
+sudo nyx
 ```
-來查看，如果出現 **"Tor version is insecure or unsupported. Please upgrade!"** 這類訊息，就代表你的 Tor 版本過舊，可以參考[此文章](https://www.reddit.com/r/TOR/comments/vsc73q/i_heard_the_ubuntu_package_is_outdated_is_this/)
+如果出現 **obsolete** 標記，就代表你的 Tor 版本過舊，可以參考以下步驟(以 Ubuntu 22.04 舉例)
 ![alt text](images/20250801/image-3.webp)
+
+先移除舊版 Tor
+```bash
+sudo apt remove tor tor-geoipdb
+sudo apt autoremove
+```
+修改設定檔
+```bash
+sudo vim /etc/tor/torrc
+```
+把 `SocksPort` 改成 **9050**
+
+安裝套件
+```bash
+sudo apt update
+sudo apt install apt-transport-https curl gnupg
+```
+匯入官方公鑰
+```bash
+curl -fsSL https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/deb.torproject.org-keyring.gpg > /dev/null
+```
+新增官方 Tor 軟體庫
+```bash
+echo "deb [signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org jammy main" | sudo tee /etc/apt/sources.list.d/tor.list
+```
+安裝最新版 Tor
+```bash
+sudo apt update
+sudo apt install tor deb.torproject.org-keyring
+```
+重啟 Tor
+```bash
+sudo systemctl restart tor@default
+sudo nyx
+```
+出現 **recommended** 標記就代表更新成功了
+![alt text](images/20250801/image-4.webp)
