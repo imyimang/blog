@@ -87,6 +87,11 @@ sudo nyx
 可以查看更詳細的節點狀態
 ![alt text](images/20250801/image-1.webp)
 
+{% contentblock 警告 type:warning %}
+使用 Ubuntu 可能會出現 Tor 版本過舊的問題，請見 [FAQ](#FAQ)
+{% endcontentblock %}
+
+
 ### 出口節點
 {% contentblock 警告 type:warning %}
 出口節點法律風險高，需承擔一定風險
@@ -217,3 +222,13 @@ Bridge obfs4 193.57.136.119:443 922FC5AF7C91143E6B8FA3420F732FC63374A32B cert=pB
 - **Fast** - 節點的速度和穩定性在一定水準
 - **Stable** - 節點為長期穩定在線的節點
 - **HSDir** - 節點可以作為 Hidden Service 目錄伺服器
+
+## FAQ
+### Tor 版本過舊
+當你使用 Ubuntu 用 APT 下載 Tor 時，有時候會遇到 Tor 版本過舊而不被網路接納的問題
+你可以使用
+```bash
+sudo systemctl status tor@default
+```
+來查看，如果出現 **"Tor version is insecure or unsupported. Please upgrade!"** 這類訊息，就代表你的 Tor 版本過舊，可以參考[此文章](https://www.reddit.com/r/TOR/comments/vsc73q/i_heard_the_ubuntu_package_is_outdated_is_this/)
+![alt text](images/20250801/image-3.webp)
