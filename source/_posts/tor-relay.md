@@ -4,6 +4,7 @@ date: 2025-08-01 14:43:19
 tags: [Tor]
 category: '資訊'
 cover: images/20250801/image.webp
+description: 詳細教學如何架設 Tor Relay 節點，包含中繼節點、出口節點和橋接節點的完整設定指南
 ---
 這篇文章會教大家如何架設一個自己的 Tor Relay，首先，你應該了解 Tor Network 是什麼
 
