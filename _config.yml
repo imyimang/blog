@@ -68,6 +68,9 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  技術: tech
+  遊記: travel
+  幣圈: crypto
 tag_map:
 
 # Metadata elements
@@ -141,12 +144,12 @@ content_blocks:
     example: "#7c4dff || fa fa-vial"
     quote: "#9e9e9e || fa fa-quote-right"
 
-# SEO Friendly Sitemap
+# Sitemap
 sitemap:
   path: sitemap.xml
-  pretty: false
-  indent: true
-  xmlDeclaration: true
+  rel: false
+  tags: true
+  categories: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

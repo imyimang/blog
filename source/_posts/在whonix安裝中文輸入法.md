@@ -2,7 +2,7 @@
 title: 在 Whonix 顯示中文/安裝注音輸入法
 date: 2025-06-02 21:26:39
 tags: [Whonix]
-category: '資訊'
+category: '技術'
 cover: images/20250602/image-1.webp
 ---
 ## 1. 下載並安裝 Whonix

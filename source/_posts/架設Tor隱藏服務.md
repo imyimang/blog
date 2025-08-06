@@ -2,7 +2,7 @@
 title: 架設 .onion 網站：Tor Hidden Service 教學
 date: 2025-06-03 22:48:18
 tags: 'Tor'
-category: '資訊'
+category: '技術'
 excerpt: '在洋蔥網路裡建立自己的 .onion 網站'
 cover: images/20250603/image-2.webp
 ---
