@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: http://blog.yimang.tw/sitemap.xml
+Sitemap: http://yimang.tw/sitemap.xml
