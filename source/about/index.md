@@ -24,6 +24,7 @@ layout: about
 - SITCON | 2025 | 會眾
 - COMPUTEX | 2025 | 會眾
 - SITCON Camp | 2025 | 庶務組
+- COSCUP | 2025 | 會眾
 
 <h1 style="font-weight: normal;">聯絡我</h1>
 

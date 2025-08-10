@@ -3,25 +3,9 @@
 .about-page {
   height: 100%;
   
-  // 調整左側圖片區域對齊
-  aside.column {
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-  }
-  
-  // 調整右側文字區域對齊
+  // 調整文字區域對齊
   section.column {
     justify-content: flex-start !important;
-  }
-  
-  // about page user info cover
-  aside img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    padding: 5px;
-
-    object-fit: cover;
   }
 
   .about-title {
