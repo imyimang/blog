@@ -52,7 +52,7 @@ appearance: auto # Default value is auto
 favicon: images/favicon.ico
 
 # Default theme color for Discord embeds
-default_theme_color: "#5865F2"
+default_theme_color: "#e0fbff"
 
 # Auto extract theme color from images
 auto_theme_color:
