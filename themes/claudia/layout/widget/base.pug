@@ -63,6 +63,14 @@ html(lang=config.language class= `appearance-${ appearance }`)
     else if theme.user && theme.user.avatar
       meta(property="og:image" content=config.url + '/' + theme.user.avatar)
     
+    <!-- Theme Color for Discord Embed -->
+    if page.theme_color
+      meta(name="theme-color" content=page.theme_color data-manual="true")
+    else if theme.default_theme_color
+      meta(name="theme-color" content=theme.default_theme_color)
+    else
+      meta(name="theme-color" content="#5865F2")
+    
     <!-- Twitter Card Meta Tags -->
     meta(name="twitter:card" content="summary_large_image")
     meta(name="twitter:site" content="@imyimang")
@@ -97,6 +105,8 @@ html(lang=config.language class= `appearance-${ appearance }`)
     
     script(src= url_for("/js/common.js"))
     script(src= url_for("/js/theme-toggle.js"))
+    if theme.auto_theme_color && theme.auto_theme_color.enable
+      script(src= url_for("/js/color-extractor.js"))
     block head
 
   body.is-flex.is-flex-direction-column(data-code-copy= theme.code_copy && theme.code_copy.enable ? 'true' : 'false')
