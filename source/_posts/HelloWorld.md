@@ -3,7 +3,7 @@ layout: 'post'
 title: Hello World!
 date: 2025-01-30 00:58:15
 tags: 
-categories: 
+categories:
 ---
 
 我的第一篇blog
