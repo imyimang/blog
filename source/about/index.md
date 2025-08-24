@@ -28,7 +28,7 @@ layout: about
 
 <h1 style="font-weight: normal;">聯絡我</h1>
 
-- Discord：@imyimang
+- Discord：@yimang__
 - Github：[<u>@imyimang</u>](https://github.com/imyimang)  
 - Instagram：[<u>@yimang__</u>](https://instagram.com/yimang__)  
 - Telegram：[<u>@imyimang</u>](https://t.me/imyimang)  
