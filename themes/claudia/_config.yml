@@ -61,8 +61,6 @@ auto_theme_color:
   # 只有在文章沒有手動設定 theme_color 時才會生效
 
 friend_links:
-  - title: 個人網站
-    link: https://yimang.tw
   - title: 超大咖託管
     link: https://coffeehost.net/
 
