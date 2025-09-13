@@ -1,7 +1,9 @@
 ---
 title: 如何透過 Github Actions 在 Tor 和 I2P 建立鏡像站並自動更新 Hexo blog
 date: 2025-09-13 16:14:51
+category: '技術'
 tags: [Github-Actions, Tor, I2P, Hexo]
+description: 完整教學如何使用 Github Actions 自動部署 Hexo 部落格到 VPS，並在 Tor 和 I2P 匿名網路上建立鏡像站，提升網站可用性與抗審查能力
 ---
 最近剛好看到 I2P 技術，就心血來潮想要在 Tor 和 I2P 網路上架設自己部落格的鏡像站，並且讓他能同步更新本站，這篇文就要示範如何透過 Github Actions 完成以上操作
 ## 什麼是 I2P/Tor
