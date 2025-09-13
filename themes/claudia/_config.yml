@@ -61,6 +61,10 @@ auto_theme_color:
   # 只有在文章沒有手動設定 theme_color 時才會生效
 
 friend_links:
+  - title: TOR鏡像站
+    link: http://fkjngxazkeuor6hb6pcovvta4we6u4l6iuetcguq7c4wvccxt2xmexqd.onion/
+  - title: I2P鏡像站
+    link: http://wis7rxcbe3kxsyx5ftothlttml62o6p4u4rasarmvda5lp2u6qxq.b32.i2p/
   - title: 超大咖託管
     link: https://coffeehost.net/
 
