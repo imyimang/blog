@@ -97,7 +97,7 @@ jobs:
         port: ${{ secrets.VPS_PORT }}
         script: "sudo systemctl reload nginx"
 ```
-讓他會先生成 public 資料夾後部屬到 VPS 的 /var/www/hexo/ 資料夾
+這樣只要有新 commit 他就會先生成 public 資料夾後部屬到 VPS 的 /var/www/hexo/ 資料夾
 
 ## 部屬 Nginx 伺服器
 先安裝 nginx
