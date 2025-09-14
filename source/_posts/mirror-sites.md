@@ -322,3 +322,32 @@ http://stats.i2p/cgi-bin/newhosts.txt
 
 新增之後我們就能用短域名訪問了
 ![alt text](images/20250913/image-21.webp)
+
+你也可以提交到一些公開的地址簿，像是 http://reg.i2p/add
+他會要求你要用私鑰去簽名證明你是這個網站的持有者
+![alt text](images/20250913/imagee.webp)
+
+可以透過開源的 [I2PD-Tools](https://github.com/PurpleI2P/i2pd-tools) 來簽名(Windows 可以用他[編譯好的版本](https://github.com/PurpleI2P/i2pd-tools/releases/tag/19eb76e-windows)，他原版是 C++ 寫的要自己編譯)
+
+我們先進入 I2P Web Console 的隱身服務管理器，點進你的服務
+![alt text](images/20250913/imagee-1.webp)
+
+他下面就會寫你的私鑰位置
+![alt text](images/20250913/imagee-2.webp)
+
+可以用 [WinSCP](https://winscp.net/eng/download.php) 用 SFTP 把檔案下載到本地，檔案路徑會在 `/home/i2puser/.i2p`
+如果不是 root 沒權限查看的話可以用下面指令讓所有人都能存取(自行斟酌)
+```bash
+sudo chmod -R 755 /home/i2puser/.i2p
+```
+
+然後我們把私鑰拉到 I2P-Tools 的資料夾(假設你已經編譯好了)，CMD/Powershell 輸入
+```bash
+./regaddr 私鑰名稱.dat 你要的網域.i2p
+# EX: ./regaddr i2ptunnel7-privKeys.dat hello-world.i2p
+```
+他就會生成一長串 `domain.i2p=base64#!sig=hash` 格式的文字，把它複製起來到 http://reg.i2p/add 或類似的網站提交即可
+![alt text](images/20250913/imagee-4.webp)
+![alt text](images/20250913/imagee-3.webp)
+
+過幾小時就會被收錄進他們的列表了，別人只要訂閱他們的地址簿就能用短域名連到你的網站
