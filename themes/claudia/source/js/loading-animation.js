@@ -41,14 +41,12 @@ function detectDomainAndGetConfig(baseConfig) {
         domainEnabled = baseConfig.onion && baseConfig.onion.enable;
         config = {
             ...baseConfig,
-            blogName: baseConfig.onion.blogName || 'TOR YIMANG',
-            textColor: baseConfig.onion.textColor || '#7d4698',
+            blogName: baseConfig.onion.blogName || baseConfig.onion.blog_name || 'TOR YIMANG',
+            textColor: baseConfig.onion.textColor || baseConfig.onion.text_color || '#7d4698',
             icon: baseConfig.onion.icon || { enable: true, image: 'images/tor.webp', animate: true }
         };
         
-        // 在頁面標題中顯示網路類型
-        document.title = '🧅 ' + document.title;
-        console.log('🧅 Tor network detected:', hostname, 'Animation enabled:', domainEnabled);
+        console.log('Tor network detected:', hostname, 'Animation enabled:', domainEnabled);
         
     } else if (hostname.endsWith('.i2p') || fullUrl.includes('.i2p')) {
         // I2P 網域偵測
@@ -56,14 +54,12 @@ function detectDomainAndGetConfig(baseConfig) {
         domainEnabled = baseConfig.i2p && baseConfig.i2p.enable;
         config = {
             ...baseConfig,
-            blogName: baseConfig.i2p.blogName || 'I2P YIMANG',
-            textColor: baseConfig.i2p.textColor || '#0066cc',
+            blogName: baseConfig.i2p.blogName || baseConfig.i2p.blog_name || 'I2P YIMANG',
+            textColor: baseConfig.i2p.textColor || baseConfig.i2p.text_color || '#0066cc',
             icon: baseConfig.i2p.icon || { enable: true, image: 'images/i2p.webp', animate: true }
         };
         
-        // 在頁面標題中顯示網路類型
-        document.title = '🌐 ' + document.title;
-        console.log('🌐 I2P network detected:', hostname, 'Animation enabled:', domainEnabled);
+        console.log('I2P network detected:', hostname, 'Animation enabled:', domainEnabled);
         
     } else {
         // 所有其他網域（yimang.tw, localhost, vercel.app, 等等）
@@ -71,12 +67,12 @@ function detectDomainAndGetConfig(baseConfig) {
         domainEnabled = baseConfig.default && baseConfig.default.enable;
         config = {
             ...baseConfig,
-            blogName: baseConfig.default.blogName || 'YIMANG',
-            textColor: baseConfig.default.textColor || '#e50914',
+            blogName: baseConfig.default.blogName || baseConfig.default.blog_name || 'YIMANG',
+            textColor: baseConfig.default.textColor || baseConfig.default.text_color || '#e50914',
             icon: baseConfig.default.icon || { enable: true, image: 'images/avatar.webp', animate: true }
         };
         
-        console.log('🌍 Regular network detected:', hostname, 'Animation enabled:', domainEnabled);
+        console.log('Regular network detected:', hostname, 'Animation enabled:', domainEnabled);
     }
     
     // 添加網路類型和啟用狀態到配置中
@@ -154,23 +150,8 @@ function createLoadingScreen(config) {
 }
 
 function createNetworkHintHTML(networkType) {
-    const hints = {
-        'tor': { text: 'Tor Network', emoji: '🧅', desc: 'Anonymous browsing enabled' },
-        'i2p': { text: 'I2P Network', emoji: '🌐', desc: 'Invisible Internet access' },
-        'regular': { text: '', emoji: '', desc: '' }
-    };
-    
-    const hint = hints[networkType] || hints['regular'];
-    
-    if (!hint.text) return '';
-    
-    return `
-        <div class="network-hint">
-            <div class="network-emoji">${hint.emoji}</div>
-            <div class="network-text">${hint.text}</div>
-            <div class="network-desc">${hint.desc}</div>
-        </div>
-    `;
+    // 不顯示任何網路提示，只顯示用戶配置的內容
+    return '';
 }
 
 function createIconHTML(iconConfig) {
@@ -183,9 +164,13 @@ function createIconHTML(iconConfig) {
 }
 
 function createLogoHTML(blogName) {
-    const letters = blogName.split('').map(letter => 
-        `<span class="letter">${letter}</span>`
-    ).join('');
+    const letters = blogName.split('').map(letter => {
+        // 如果是空格，保持空格但不包裝在 span 中
+        if (letter === ' ') {
+            return ' ';
+        }
+        return `<span class="letter">${letter}</span>`;
+    }).join('');
     
     return `<div class="loading-logo">${letters}</div>`;
 }

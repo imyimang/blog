@@ -92,7 +92,7 @@ code_copy:
 # Loading animation (Netflix style)
 loading_animation:
   enable: true # Global enable/disable for the entire loading animation system
-  duration: 3000 # Animation duration in milliseconds
+  duration: 4000 # Animation duration in milliseconds
   skip_on_return: true # Skip animation on return visits within same session
   
   # Default settings (for all domains except .onion and .i2p)
