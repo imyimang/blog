@@ -1,6 +1,7 @@
 main.aside-card-container.tag-widget(class= is_tag() && 'is-in-tag-page')
     h3= _p('tag')
     section
-        each tag in site.tags.toArray()
+        - var sortedTags = site.tags.toArray().sort(function(a, b) { return b.posts.length - a.posts.length; })
+        each tag in sortedTags
             a(href= url_for(`/tags/${tag.name}`))
-                span.tag.post-item-tag(style="margin-bottom: 5px;")= tag.name
+                span.tag.post-item-tag(style="margin-bottom: 5px;")= tag.name + '(' + tag.posts.length + ')'
