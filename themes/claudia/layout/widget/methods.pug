@@ -65,6 +65,20 @@
         return readingTime < 1 ? 1 : Math.round(readingTime)
     }
 
+    function getPostCategory(post) {
+        // 檢查是否有 category 欄位
+        if (post.category) {
+            return post.category
+        }
+        
+        // 檢查是否有 categories 集合
+        if (post.categories && post.categories.length > 0) {
+            return post.categories.toArray()[0].name
+        }
+        
+        return null
+    }
+
     function getBlogStats() {
         let totalWords = 0
         let postCount = 0

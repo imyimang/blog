@@ -35,6 +35,10 @@ block content
                     if page.date
                         time.has-text-grey(datetime=page.date.toJSON())= date(page.date, date_format)
                     span.has-text-grey.mx-2 |
+                    - var categoryName = getPostCategory(page)
+                    if categoryName
+                        span.has-text-grey= categoryName
+                        span.has-text-grey.mx-2 |
                     span.has-text-grey #{getAccurateWordCount(page.content)} 字
                     span.has-text-grey.mx-2 |
                     span.has-text-grey #{getAccurateReadTime(page.content, 250, 150)} 分鐘

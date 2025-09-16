@@ -2,6 +2,7 @@
 title: Italian Brainrot迷因統整、題目技巧
 date: 2025-04-01 21:00:13
 tags:
+category: '雜記'
 ---
 關於Italian Brainrot迷因一些常見人物的整理，以及如何精通reels題目
 

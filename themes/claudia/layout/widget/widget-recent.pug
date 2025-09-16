@@ -19,5 +19,7 @@ main.aside-card-container.recent-widget
                             if post.date
                                 time(datetime=post.date.toJSON()).has-text-weight-semibold.has-text-grey
                                     = date(post.date, date_format)
-                            span.has-text-grey.mx-1 |
-                            span.has-text-grey #{getAccurateReadTime(post.content, 250, 150)} 分鐘
+                            - var categoryName = getPostCategory(post)
+                            if categoryName
+                                span.has-text-grey.mx-1 |
+                                span.has-text-grey= categoryName

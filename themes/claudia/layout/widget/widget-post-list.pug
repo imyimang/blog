@@ -29,6 +29,10 @@ article.post-container.is-flex.is-justify-content-center.section.container.is-ma
                                     if post.date
                                         time.has-text-grey(datetime=post.date.toJSON())= date(post.date, date_format)
                                     span.has-text-grey.mx-2 |
+                                    - var categoryName = getPostCategory(post)
+                                    if categoryName
+                                        span.has-text-grey= categoryName
+                                        span.has-text-grey.mx-2 |
                                     span.has-text-grey #{getAccurateWordCount(post.content)} 字
                                     span.has-text-grey.mx-2 |
                                     span.has-text-grey #{getAccurateReadTime(post.content, 250, 150)} 分鐘
