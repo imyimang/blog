@@ -38,12 +38,16 @@
 }
 
 .network-text {
-    font-size: 1.2rem;
+    font-size: clamp(0.7rem, 3vw, 1.2rem);
     font-weight: bold;
     color: #fff;
     margin-bottom: 5px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: clamp(0, 1vw, 2px);
+    white-space: nowrap;
+    max-width: 90vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .network-desc {
@@ -116,14 +120,52 @@
     }
 }
 
+/* SVG 圖標特定樣式 */
+.loading-icon-svg {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: iconAppear 0.8s ease-out 0.2s forwards;
+}
+
+.loading-icon-svg.animate {
+    animation: iconAppear 0.8s ease-out 0.2s forwards, iconBounce 2s ease-in-out 1s infinite;
+}
+
+.loading-icon-svg img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px rgba(125, 70, 152, 0.3));
+}
+
+/* Tor SVG 特殊效果 */
+.loading-icon-svg img[src*="tor.svg"] {
+    filter: drop-shadow(0 0 15px rgba(125, 70, 152, 0.5));
+}
+
+/* I2P SVG 特殊效果 */
+.loading-icon-svg img[src*="i2p.svg"] {
+    filter: drop-shadow(0 0 15px rgba(0, 102, 204, 0.5));
+}
+
 .loading-logo {
     position: relative;
-    font-size: 4rem;
+    font-size: clamp(1.5rem, 8vw, 4rem);
     font-weight: bold;
     color: #e50914;
     font-family: 'Arial Black', Arial, sans-serif;
-    letter-spacing: 0.1em;
+    letter-spacing: clamp(-0.05em, 0.5vw, 0.1em);
     text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90vw;
 }
 
 /* Logo 文字動畫 */
@@ -307,17 +349,33 @@
 }
 
 /* 響應式設計 */
+@media (max-width: 1200px) {
+    .loading-logo {
+        font-size: 3.5rem;
+    }
+    
+    .network-text {
+        font-size: 1.1rem;
+    }
+    
+    .network-emoji {
+        font-size: 1.8rem;
+    }
+}
+
 @media (max-width: 768px) {
     .loading-container {
         flex-direction: column;
         gap: 20px;
+        padding: 0 20px;
     }
     
     .loading-logo {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+        letter-spacing: 0.05em;
     }
     
-    .loading-icon {
+    .loading-icon, .loading-icon-svg {
         width: 2.5rem;
         height: 2.5rem;
     }
@@ -325,23 +383,106 @@
     .loading-progress {
         width: 250px;
     }
+    
+    .network-text {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .network-emoji {
+        font-size: 1.6rem;
+    }
+    
+    .network-desc {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .loading-logo {
+        font-size: 2.3rem;
+        letter-spacing: 0.02em;
+    }
+    
+    .loading-container {
+        padding: 0 15px;
+    }
+    
+    .network-text {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
 }
 
 @media (max-width: 480px) {
     .loading-container {
         gap: 15px;
+        padding: 0 10px;
     }
     
     .loading-logo {
         font-size: 2rem;
+        letter-spacing: 0;
     }
     
-    .loading-icon {
+    .loading-icon, .loading-icon-svg {
         width: 2rem;
         height: 2rem;
     }
     
     .loading-progress {
         width: 200px;
+    }
+    
+    .network-text {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .network-emoji {
+        font-size: 1.4rem;
+    }
+    
+    .network-desc {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .loading-logo {
+        font-size: 1.8rem;
+        letter-spacing: -0.02em;
+    }
+    
+    .loading-container {
+        padding: 0 8px;
+    }
+    
+    .network-text {
+        font-size: 0.75rem;
+        letter-spacing: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .loading-logo {
+        font-size: 1.5rem;
+        letter-spacing: -0.05em;
+    }
+    
+    .loading-container {
+        padding: 0 5px;
+    }
+    
+    .network-text {
+        font-size: 0.7rem;
+    }
+    
+    .network-emoji {
+        font-size: 1.2rem;
+    }
+    
+    .loading-progress {
+        width: 180px;
     }
 }

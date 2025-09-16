@@ -92,8 +92,9 @@ code_copy:
 # Loading animation (Netflix style)
 loading_animation:
   enable: true # Global enable/disable for the entire loading animation system
-  duration: 4000 # Animation duration in milliseconds
+  duration: 3500 # Animation duration in milliseconds
   skip_on_return: true # Skip animation on return visits within same session
+  auto_resize_font: true # Automatically resize font to prevent line wrapping on mobile devices
   
   # Default settings (for all domains except .onion and .i2p)
   default:
@@ -112,15 +113,15 @@ loading_animation:
     text_color: "#7d4698" # Tor purple
     icon:
       enable: true
-      image: "images/tor.webp" # Tor logo
+      image: "images/tor.svg" # Tor logo (SVG)
       animate: true
   
   # I2P network settings (.i2p domains)
   i2p:
     enable: true # Enable animation for I2P domains
     blog_name: "Welcome from I2P"
-    text_color: "#00CC00" # I2P blue
+    text_color: "#0066cc" # I2P blue (updated to match SVG)
     icon:
       enable: true
-      image: "images/i2p.webp" # I2P logo
+      image: "images/i2p.svg" # I2P logo (SVG)
       animate: true

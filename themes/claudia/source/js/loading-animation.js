@@ -43,7 +43,8 @@ function detectDomainAndGetConfig(baseConfig) {
             ...baseConfig,
             blogName: baseConfig.onion.blogName || baseConfig.onion.blog_name || 'TOR YIMANG',
             textColor: baseConfig.onion.textColor || baseConfig.onion.text_color || '#7d4698',
-            icon: baseConfig.onion.icon || { enable: true, image: 'images/tor.webp', animate: true }
+            icon: baseConfig.onion.icon || { enable: true, image: 'images/tor.webp', animate: true },
+            autoResizeFont: baseConfig.auto_resize_font !== false
         };
         
         console.log('Tor network detected:', hostname, 'Animation enabled:', domainEnabled);
@@ -56,7 +57,8 @@ function detectDomainAndGetConfig(baseConfig) {
             ...baseConfig,
             blogName: baseConfig.i2p.blogName || baseConfig.i2p.blog_name || 'I2P YIMANG',
             textColor: baseConfig.i2p.textColor || baseConfig.i2p.text_color || '#0066cc',
-            icon: baseConfig.i2p.icon || { enable: true, image: 'images/i2p.webp', animate: true }
+            icon: baseConfig.i2p.icon || { enable: true, image: 'images/i2p.webp', animate: true },
+            autoResizeFont: baseConfig.auto_resize_font !== false
         };
         
         console.log('I2P network detected:', hostname, 'Animation enabled:', domainEnabled);
@@ -69,7 +71,8 @@ function detectDomainAndGetConfig(baseConfig) {
             ...baseConfig,
             blogName: baseConfig.default.blogName || baseConfig.default.blog_name || 'YIMANG',
             textColor: baseConfig.default.textColor || baseConfig.default.text_color || '#e50914',
-            icon: baseConfig.default.icon || { enable: true, image: 'images/avatar.webp', animate: true }
+            icon: baseConfig.default.icon || { enable: true, image: 'images/avatar.webp', animate: true },
+            autoResizeFont: baseConfig.auto_resize_font !== false
         };
         
         console.log('Regular network detected:', hostname, 'Animation enabled:', domainEnabled);
@@ -130,6 +133,11 @@ function createLoadingScreen(config) {
     // 應用自定義顏色
     applyCustomColors(config.textColor || '#e50914');
     
+    // 動態調整字體大小以防止換行（如果啟用的話）
+    if (config.autoResizeFont !== false) {
+        adjustFontSizeForScreenWidth(loadingScreen, blogName);
+    }
+    
     // 隱藏主要內容
     document.body.style.overflow = 'hidden';
     
@@ -160,6 +168,14 @@ function createIconHTML(iconConfig) {
     }
     
     const animateClass = iconConfig.animate ? 'animate' : '';
+    
+    // 檢查是否為 SVG 檔案
+    if (iconConfig.image.toLowerCase().endsWith('.svg')) {
+        return `<div class="loading-icon-svg ${animateClass}">
+                    <img src="${iconConfig.image}" alt="Loading Icon" class="loading-icon ${animateClass}">
+                </div>`;
+    }
+    
     return `<img src="${iconConfig.image}" alt="Loading Icon" class="loading-icon ${animateClass}">`;
 }
 
@@ -259,6 +275,93 @@ document.addEventListener('click', function(e) {
         hideLoadingScreen();
     }
 });
+
+// 動態調整字體大小以防止換行
+function adjustFontSizeForScreenWidth(loadingScreen, blogName) {
+    const logoElement = loadingScreen.querySelector('.loading-logo');
+    const networkTextElement = loadingScreen.querySelector('.network-text');
+    
+    if (!logoElement) return;
+    
+    // 計算適合的字體大小
+    function calculateOptimalFontSize() {
+        const screenWidth = window.innerWidth;
+        const textLength = blogName.length;
+        
+        // 基於螢幕寬度和文字長度計算字體大小
+        let fontSize;
+        
+        if (screenWidth <= 320) {
+            fontSize = Math.min(1.2, screenWidth / (textLength * 18));
+        } else if (screenWidth <= 375) {
+            fontSize = Math.min(1.6, screenWidth / (textLength * 16));
+        } else if (screenWidth <= 480) {
+            fontSize = Math.min(2.0, screenWidth / (textLength * 14));
+        } else if (screenWidth <= 640) {
+            fontSize = Math.min(2.4, screenWidth / (textLength * 12));
+        } else if (screenWidth <= 768) {
+            fontSize = Math.min(2.8, screenWidth / (textLength * 10));
+        } else if (screenWidth <= 1024) {
+            fontSize = Math.min(3.2, screenWidth / (textLength * 8));
+        } else {
+            fontSize = Math.min(4.0, screenWidth / (textLength * 6));
+        }
+        
+        return Math.max(fontSize, 1.0); // 最小字體大小 1rem
+    }
+    
+    // 應用字體大小
+    function applyFontSize() {
+        const optimalSize = calculateOptimalFontSize();
+        logoElement.style.fontSize = `${optimalSize}rem`;
+        
+        // 同時調整網路提示文字
+        if (networkTextElement) {
+            const networkFontSize = Math.max(optimalSize * 0.25, 0.6);
+            networkTextElement.style.fontSize = `${networkFontSize}rem`;
+        }
+        
+        // 調整字母間距
+        const screenWidth = window.innerWidth;
+        let letterSpacing;
+        
+        if (screenWidth <= 375) {
+            letterSpacing = '-0.02em';
+        } else if (screenWidth <= 768) {
+            letterSpacing = '0.02em';
+        } else {
+            letterSpacing = '0.1em';
+        }
+        
+        logoElement.style.letterSpacing = letterSpacing;
+    }
+    
+    // 初始調整
+    applyFontSize();
+    
+    // 監聽視窗大小變化
+    const resizeHandler = () => {
+        applyFontSize();
+    };
+    
+    window.addEventListener('resize', resizeHandler);
+    
+    // 清理函數（當載入畫面被移除時）
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'childList') {
+                mutation.removedNodes.forEach((node) => {
+                    if (node === loadingScreen) {
+                        window.removeEventListener('resize', resizeHandler);
+                        observer.disconnect();
+                    }
+                });
+            }
+        });
+    });
+    
+    observer.observe(document.body, { childList: true });
+}
 
 // 防止在載入動畫期間滾動
 function preventScroll(e) {
