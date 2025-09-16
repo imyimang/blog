@@ -88,3 +88,39 @@ code_copy:
     color: "#ffffff"
     background: "#444444"
     text: "複製"
+
+# Loading animation (Netflix style)
+loading_animation:
+  enable: true # Global enable/disable for the entire loading animation system
+  duration: 3000 # Animation duration in milliseconds
+  skip_on_return: true # Skip animation on return visits within same session
+  
+  # Default settings (for all domains except .onion and .i2p)
+  default:
+    enable: true # Enable animation for regular domains (all except .onion and .i2p)
+    blog_name: "YIMANG"
+    text_color: "#FF5A36" # Netflix orange (recommended)
+    icon:
+      enable: true
+      image: "images/avatar.webp"
+      animate: true
+  
+  # Tor network settings (.onion domains)
+  onion:
+    enable: true # Enable animation for Tor domains
+    blog_name: "Welcome from Tor"
+    text_color: "#7d4698" # Tor purple
+    icon:
+      enable: true
+      image: "images/tor.webp" # Tor logo
+      animate: true
+  
+  # I2P network settings (.i2p domains)
+  i2p:
+    enable: true # Enable animation for I2P domains
+    blog_name: "Welcome from I2P"
+    text_color: "#00CC00" # I2P blue
+    icon:
+      enable: true
+      image: "images/i2p.webp" # I2P logo
+      animate: true

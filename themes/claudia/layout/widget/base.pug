@@ -98,6 +98,8 @@ html(lang=config.language class= `appearance-${ appearance }`)
     link(rel="stylesheet" href= url_for('/style/common/bulma.css'))
     link(rel="stylesheet" href= url_for('/style/base.css'))
     link(rel="stylesheet" href= url_for('/style/common/helper.css'))
+    if theme.loading_animation && theme.loading_animation.enable
+      link(rel="stylesheet" href= url_for('/style/loading-animation.css'))
     
     // Content blocks CSS
     if config.content_blocks && config.content_blocks.enable
@@ -105,6 +107,50 @@ html(lang=config.language class= `appearance-${ appearance }`)
     
     script(src= url_for("/js/common.js"))
     script(src= url_for("/js/theme-toggle.js"))
+    if theme.loading_animation && theme.loading_animation.enable
+      script.
+        window.loadingAnimationConfig = {
+          enable: true,
+          duration: #{theme.loading_animation.duration || 4000},
+          skipOnReturn: #{theme.loading_animation.skip_on_return || true},
+          
+          // Default (regular domain) settings
+          default: {
+            enable: #{theme.loading_animation.default && theme.loading_animation.default.enable || false},
+            blogName: '#{theme.loading_animation.default && theme.loading_animation.default.blog_name || "YIMANG"}',
+            textColor: '#{theme.loading_animation.default && theme.loading_animation.default.text_color || "#e50914"}',
+            icon: {
+              enable: #{theme.loading_animation.default && theme.loading_animation.default.icon && theme.loading_animation.default.icon.enable || true},
+              image: '#{theme.loading_animation.default && theme.loading_animation.default.icon && theme.loading_animation.default.icon.image ? url_for(theme.loading_animation.default.icon.image) : url_for("images/avatar.webp")}',
+              animate: #{theme.loading_animation.default && theme.loading_animation.default.icon && theme.loading_animation.default.icon.animate || true}
+            }
+          },
+          
+          // Tor (.onion) settings
+          onion: {
+            enable: #{theme.loading_animation.onion && theme.loading_animation.onion.enable || false},
+            blogName: '#{theme.loading_animation.onion && theme.loading_animation.onion.blog_name || "TOR YIMANG"}',
+            textColor: '#{theme.loading_animation.onion && theme.loading_animation.onion.text_color || "#7d4698"}',
+            icon: {
+              enable: #{theme.loading_animation.onion && theme.loading_animation.onion.icon && theme.loading_animation.onion.icon.enable || true},
+              image: '#{theme.loading_animation.onion && theme.loading_animation.onion.icon && theme.loading_animation.onion.icon.image ? url_for(theme.loading_animation.onion.icon.image) : url_for("images/tor.webp")}',
+              animate: #{theme.loading_animation.onion && theme.loading_animation.onion.icon && theme.loading_animation.onion.icon.animate || true}
+            }
+          },
+          
+          // I2P settings
+          i2p: {
+            enable: #{theme.loading_animation.i2p && theme.loading_animation.i2p.enable || false},
+            blogName: '#{theme.loading_animation.i2p && theme.loading_animation.i2p.blog_name || "I2P YIMANG"}',
+            textColor: '#{theme.loading_animation.i2p && theme.loading_animation.i2p.text_color || "#0066cc"}',
+            icon: {
+              enable: #{theme.loading_animation.i2p && theme.loading_animation.i2p.icon && theme.loading_animation.i2p.icon.enable || true},
+              image: '#{theme.loading_animation.i2p && theme.loading_animation.i2p.icon && theme.loading_animation.i2p.icon.image ? url_for(theme.loading_animation.i2p.icon.image) : url_for("images/i2p.webp")}',
+              animate: #{theme.loading_animation.i2p && theme.loading_animation.i2p.icon && theme.loading_animation.i2p.icon.animate || true}
+            }
+          }
+        };
+      script(src= url_for("/js/loading-animation.js"))
     if theme.auto_theme_color && theme.auto_theme_color.enable
       script(src= url_for("/js/color-extractor.js"))
     block head
