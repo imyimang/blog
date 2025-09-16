@@ -120,7 +120,7 @@ loading_animation:
   i2p:
     enable: true # Enable animation for I2P domains
     blog_name: "Welcome from I2P"
-    text_color: "#0066cc" # I2P blue (updated to match SVG)
+    text_color: "#00CC00" # I2P green
     icon:
       enable: true
       image: "images/i2p.svg" # I2P logo (SVG)
