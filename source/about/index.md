@@ -3,7 +3,7 @@ title: about
 date: 2025-01-30 00:00:00
 layout: about
 ---
-嗨！我是個熱愛技術與資訊社群的開發者，你可以叫我 Lucas 或 yimang(意麵)，熱衷於參與各種技術社群活動，與志同道合的朋友們交流學習 
+嗨！我是個熱愛技術與資訊社群的開發者，你可以叫我 Lucas 或 yimang(意麵)，歡迎用 [<u>RSS</u>](/rss.xml) 訂閱我的 Blog！
 
 我對區塊鏈和匿名網路的技術也很有興趣，歡迎找我討論！
 
@@ -28,15 +28,18 @@ layout: about
 
 <h1 style="font-weight: normal;">聯絡我</h1>
 
-- Discord：@yimang__
+- Discord：@yimang__  
 - Github：[<u>@imyimang</u>](https://github.com/imyimang)  
 - Instagram：[<u>@yimang__</u>](https://instagram.com/yimang__)  
 - Telegram：[<u>@imyimang</u>](https://t.me/imyimang)  
 - X：[<u>@imyimang</u>](https://x.com/imyimang)  
-- Signal：@yimang.99 
-- Email：[<u>me@yimang.tw</u>](mailto:me@yimang.tw)
+- Signal：@yimang.99  
 
+- Email：[<u>me@yimang.tw</u>](mailto:me@yimang.tw)  
+- I2P Mail：yimang@mail\.i2p  
 
+- PGP：[<u>Download Public Key</u>](/yimang_public.asc)  
+- Fingerprint：422B 779C D894 982B C41E 85EE 3624 CAD7 8AFC 3169  
 
-
+- Session：05a7020aa9c5d0501877252f2fa5a6d7df3b808e5738edc149d78debd14401b54a  
 

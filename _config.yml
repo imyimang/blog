@@ -115,7 +115,7 @@ feed:
   enable: true
   type: rss2
   path: rss2.xml
-  limit: 20
+  limit: 50
   hub:
   content: true
   content_limit: 140
