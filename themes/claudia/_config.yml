@@ -98,7 +98,7 @@ loading_animation:
   
   # Default settings (for all domains except .onion and .i2p)
   default:
-    enable: true # Enable animation for regular domains (all except .onion and .i2p)
+    enable: false # Enable animation for regular domains (all except .onion and .i2p)
     blog_name: "YIMANG"
     text_color: "#FF5A36" # Netflix orange (recommended)
     icon:
