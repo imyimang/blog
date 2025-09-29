@@ -82,7 +82,7 @@ $coverBlurEffect: 20px;
   .archives-widget,
   .recent-widget,
   .friend-widget,
-  .tag-widget, {
+  .tag-widget {
     h3 {
       font-weight: bold;
       margin-bottom: 10px;
@@ -130,9 +130,10 @@ $coverBlurEffect: 20px;
     }
 
     .avatar-placeholder:after {
-      content: "\e62a";
+      content: "\f007";
       font-size: 80px;
-      font-family: iconfont;
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
 
       position: absolute;
       top: 50%;
