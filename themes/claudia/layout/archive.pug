@@ -4,7 +4,23 @@ block append head
     link(rel='stylesheet', href= url_for("/style/widget-post-list.css"))
 
 block topic
-    span= `${ _p('archive') } · ${ page.year || __('all') }`
+    -
+        var archiveLabel = `${ _p('archive') } · `
+        if (page.year) {
+            var segments = [page.year]
+            if (page.month) {
+                var month = String(page.month).padStart(2, '0')
+                segments.push(month)
+                if (page.day) {
+                    var day = String(page.day).padStart(2, '0')
+                    segments.push(day)
+                }
+            }
+            archiveLabel += segments.join('-')
+        } else {
+            archiveLabel += __('all')
+        }
+    span= archiveLabel
 
 block content
     include widget/widget-post-list
