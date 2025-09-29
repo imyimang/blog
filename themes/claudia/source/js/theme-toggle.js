@@ -45,30 +45,25 @@
         updateIcon(themeIcon);
         updateIcon(themeIconMobile);
         
-        // Save to localStorage
-        localStorage.setItem('theme', theme);
+        // Save to localStorage only for manual themes
+        if (theme === 'auto') {
+            localStorage.removeItem('theme');
+        } else {
+            localStorage.setItem('theme', theme);
+        }
     }
     
     // Cycle through themes: auto -> light -> dark -> auto
     function cycleTheme() {
         const currentTheme = getCurrentTheme();
-        let nextTheme;
-        
-        switch(currentTheme) {
-            case 'auto':
-                nextTheme = 'light';
-                break;
-            case 'light':
-                nextTheme = 'dark';
-                break;
-            case 'dark':
-                nextTheme = 'auto';
-                break;
-            default:
-                nextTheme = 'auto';
+
+        if (currentTheme === 'auto') {
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(prefersDark ? 'light' : 'dark');
+            return;
         }
-        
-        setTheme(nextTheme);
+
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
     }
     
     // Initialize theme on page load
