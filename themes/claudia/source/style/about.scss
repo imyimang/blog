@@ -11,4 +11,19 @@
   .about-title {
     font-weight: normal;
   }
+
+  article {
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+
+    li,
+    p,
+    span,
+    a,
+    strong {
+      word-break: inherit;
+      overflow-wrap: inherit;
+    }
+  }
 }
