@@ -56,6 +56,16 @@ prismjs:
   line_number: true
   tab_replace: ''
 
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  linkify: true
+  typographer: true
+  quotes: "“”‘’"
+  pre_class: highlight
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
