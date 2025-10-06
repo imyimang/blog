@@ -66,6 +66,14 @@ markdown_it_plus:
   quotes: "“”‘’"
   pre_class: highlight
 
+nofollow:
+  enable: true
+  field: site
+  exclude: []
+  exclude_localhost: false
+  exclude_links_to_image: false
+  selectors: []
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
