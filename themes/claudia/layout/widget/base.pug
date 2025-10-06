@@ -192,5 +192,8 @@ html(lang=config.language class= `appearance-${ appearance }`)
         span!= theme.user && theme.user.footnotes
 
     script(async defer src="https://buttons.github.io/buttons.js")
+    script(type="module").
+      import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1/dist/index.mjs';
+      injectSpeedInsights();
     block script
 
