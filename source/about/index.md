@@ -11,7 +11,7 @@ layout: about
 
 - [<u>超大咖網路企業社</u>](https://coffeehost.net) | 共同創辦人 (2024/2 – Now)
 
-<h2 style="font-weight: normal;">校園經歷</h1>
+<h2 style="font-weight: normal;">校園經歷</h2>
 
 - [<u>大安高工第26屆電腦研究社</u>](https://www.instagram.com/dacsc26th/) | 副社/軟教
 - [<u>大安高工第1屆資訊安全研究社</u>](https://www.instagram.com/taivs.cssc/) | 網管
