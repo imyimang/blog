@@ -3,7 +3,7 @@ title: $Dafang以大坊，曇花一現的繁中迷因盤
 date: 2025-10-16 21:24:25
 tags:
 category: '幣圈'
-description: 
+description: 記錄 BSC 鏈上的繁中迷因幣 $Dafang以大坊 從暴漲至市值 4600 萬美金到一天內崩跌 99% 的完整過程,以及 KOL 推波助瀾背後的故事，並採訪受害者。
 cover: images/20251016/edh.webp
 ---
 最近在 BSC 上爆紅了一個中文圈迷因幣$Dafang以大坊，在短短幾天內拉到4600萬美金市值，又在一天內跌去99%的市值，留下一地雞毛
