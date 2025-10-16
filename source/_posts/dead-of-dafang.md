@@ -15,9 +15,13 @@ cover: images/20251016/edh.webp
 並聲稱之後在群組成員和 [幣圈發哥](https://www.youtube.com/@Facrypto.t) 的推廣下將這個繁中圈文字梗迷因幣推向了更高潮，稱要對標幣安人生的 500M 市值
 
 ## KOL的推波助瀾
-10/10號開始，MarsCrypto 開始在 X, Threads, YT 等平台大力推銷以大坊，並在文案和直播影片中大量使用 "千萬別錯過"，"最後機會" 等字眼，派網也在 10/11 上架了$Dafang以大坊，兩人也在文案和說明欄中讓大家使用派網並用他們的邀請碼
+10/10號開始，MarsCrypto 開始在 X, Threads, YT 等平台大力推銷以大坊，並在文案和直播影片中大量使用 "千萬別錯過"，"最後機會" 等字眼
 ![alt text](images/20251016/image-1.webp)
 ![alt text](images/20251016/image-4.webp)
+
+派網也在 10/11 上架了$Dafang以大坊，兩人也在文案和說明欄中讓大家使用派網並用他們的邀請碼
+![alt text](images/20251016/pionex.webp)
+
 10/12號 幣圈發哥 也加入了宣傳以大坊的行列
 ![alt text](images/20251016/image-2.webp)
 ![alt text](images/20251016/image-5.webp)
