@@ -19,10 +19,10 @@ cover: images/20251016/edh.webp
 ![alt text](images/20251016/image-1.webp)
 ![alt text](images/20251016/image-4.webp)
 
-派網也在 10/11 上架了$Dafang以大坊，兩人也在文案和說明欄中讓大家使用派網並用他們的邀請碼
+派網也在 10/11 上架了$Dafang以大坊
 ![alt text](images/20251016/pionex.webp)
 
-10/12號 幣圈發哥 也加入了宣傳以大坊的行列
+10/12號 幣圈發哥 也加入了宣傳以大坊的行列，兩人也在文案和說明欄中讓大家使用派網並用他們的邀請碼
 ![alt text](images/20251016/image-2.webp)
 ![alt text](images/20251016/image-5.webp)
 並且 MarsCrypto 自稱是 "[以大坊基金會](https://edh-seven.vercel.app)創始人"，宣稱要創造一個長期營運的繁中圈 CTO 代幣，且成員不會賣出，所以不會有賣壓問題
