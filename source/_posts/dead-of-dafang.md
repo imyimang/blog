@@ -36,12 +36,13 @@ cover: images/20251016/edh.webp
 
 浮盈一度高達1億5台幣的受害者，人稱萬U哥的大哥在爆跌後有開[直播](https://www.youtube.com/live/0wubKAMlpRs)
 
-至於暴跌原因，目前尚有定論，根據 幣圈發哥 發布的[道歉聲明影片](https://www.youtube.com/watch?v=Bt3fIf0NJqY)，前幾大持倉者並沒有售出，是由於流動性太低導致的踩踏事故，但根據受害者社群的討論，認為大戶和散戶都有倒貨才導致暴跌
+至於暴跌原因，目前尚有定論，根據 幣圈發哥 發布的[道歉澄清聲明影片](https://www.youtube.com/watch?v=Bt3fIf0NJqY)，前幾大持倉者並沒有售出，是由於流動性太低導致的踩踏事故，但根據受害者社群的討論，認為大戶和散戶都有倒貨才導致暴跌
 ![alt text](images/20251016/image-7.webp)
 
 10/17 19:30開始，曾經浮盈1億台幣人稱萬U哥(0x255085d52e3c61bff52886d1cd5af6819223109a)在 Youtube 開直播砸盤，清倉賣出大約6000萬顆以大坊，市值從110K進一步下跌到67K
 ![alt text](images/20251016/img.webp)
 ![alt text](images/20251016/img1.webp)
+萬U哥也讓受害者到 LBank 交易所上做空以大坊，希望能讓受害者賺回一些錢
 
 以大坊事件也登上在大約19:30登上了 [三立新聞](https://www.youtube.com/watch?v=JDRSC77oKLo)
 ![alt text](images/20251016/img2.webp)
