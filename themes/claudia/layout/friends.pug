@@ -1,0 +1,14 @@
+extends widget/base
+
+block append head
+    link(rel='stylesheet' href= url_for('/style/friends.css'))
+
+block content
+    main.friends-page.is-flex.is-align-items-center.content.is-full-height
+        .container.is-max-widescreen.px-2
+            .columns.is-marginless
+                section.column.is-12.is-flex.is-flex-direction-column.is-justify-content-center
+                    article!= page.content
+block append script
+    script.
+        $claudia.fadeInImage()
