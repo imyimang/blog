@@ -14,7 +14,7 @@ layout: friends
   <a href="https://robin-tw.me/" target="_blank">
     <img src="https://robin-tw.me/avatar.jpg" alt="Friend Avatar" class="friend-avatar">
     <div class="friend-info">
-      <h3 class="friend-name">Rboin</h3>
+      <h3 class="friend-name">Robin</h3>
       <p class="friend-desc">臭宅一個</p>
     </div>
   </a>
@@ -39,4 +39,15 @@ layout: friends
     </div>
   </a>
 </div>
+
+<div class="friend-card">
+  <a href="https://peterqgogzq.dpdns.org/" target="_blank">
+    <img src="images/friends/peter.webp" alt="Friend Avatar" class="friend-avatar">
+    <div class="friend-info">
+      <h3 class="friend-name">迷茫的汪汪</h3>
+      <p class="friend-desc">新手小白學底</p>
+    </div>
+  </a>
+</div>
+
 </div>
