@@ -12,8 +12,8 @@
     "version": "7.3.0"
   },
   "dependencies": {
-    "hexo": "^7.3.0",
     "@vercel/speed-insights": "^1.0.10",
+    "hexo": "^7.3.0",
     "hexo-all-minifier": "^0.5.7",
     "hexo-content-blocks": "^2.0.2",
     "hexo-deployer-git": "^4.0.0",
@@ -36,5 +36,8 @@
     "hexo-server": "^3.0.0",
     "hexo-spoiler": "^1.7.4",
     "hexo-theme-landscape": "^1.0.0"
+  },
+  "devDependencies": {
+    "purgecss": "^7.0.2"
   }
 }
