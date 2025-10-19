@@ -22,6 +22,7 @@ layout: friends
 
 <div class="friend-card">
   <a href="https://n1cat.xyz" target="_blank">
+  //甲
     <img src="https://api.n1cat.xyz/api/v2/objects/avatar/f05glkbbc2o13i0fmr.jpg" alt="Friend Avatar" class="friend-avatar">
     <div class="friend-info">
       <h3 class="friend-name">n1cat</h3>
