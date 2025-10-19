@@ -6,7 +6,7 @@ category: '技術'
 cover: images/20250602/image-1.webp
 ---
 ## 1. 下載並安裝 Whonix
-
+ 
 到 whonix 官網下載[虛擬機版本](https://www.whonix.org/wiki/VirtualBox#stable_Xfce)或映像檔
 ![images](images/20250602/image1.webp)
 如果沒有安裝 VirtualBox 的下面也有安裝教學，本篇以虛擬機示範
