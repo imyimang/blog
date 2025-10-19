@@ -70,4 +70,14 @@ layout: friends
   </a>
 </div>
 
+<div class="friend-card">
+  <a href="https://owen0924.com/" target="_blank">
+    <img src="images/friends/owen.webp" alt="Friend Avatar" class="friend-avatar">
+    <div class="friend-info">
+      <h3 class="friend-name">owen0924</h3>
+      <p class="friend-desc">黃遊有 1TB 的酪梨控</p>
+    </div>
+  </a>
+</div>
+
 </div>
