@@ -60,4 +60,14 @@ layout: friends
   </a>
 </div>
 
+<div class="friend-card">
+  <a href="https://bcxy.me/" target="_blank">
+    <img src="images/friends/bc.webp" alt="Friend Avatar" class="friend-avatar">
+    <div class="friend-info">
+      <h3 class="friend-name">BC</h3>
+      <p class="friend-desc">直升機</p>
+    </div>
+  </a>
+</div>
+
 </div>
