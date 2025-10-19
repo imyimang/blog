@@ -50,4 +50,14 @@ layout: friends
   </a>
 </div>
 
+<div class="friend-card">
+  <a href="https://blog.cre0809.com" target="_blank">
+    <img src="images/friends/cre.webp" alt="Friend Avatar" class="friend-avatar">
+    <div class="friend-info">
+      <h3 class="friend-name">西瑞</h3>
+      <p class="friend-desc">人</p>
+    </div>
+  </a>
+</div>
+
 </div>
