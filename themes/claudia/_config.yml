@@ -125,3 +125,13 @@ loading_animation:
       enable: true
       image: "images/i2p.svg" # I2P logo (SVG)
       animate: true
+
+# Reading progress bar
+reading_progress:
+  enable: true # Enable/disable reading progress bar
+  position: top # top or bottom
+  height: 3px # Progress bar height
+  color: # Custom color (gradient or solid), leave empty for default
+  smooth: true # Smooth animation
+  post_only: true # Only show on post pages
+  adjust_on_image_load: true # Recalculate on image load

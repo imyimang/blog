@@ -3,6 +3,8 @@ block append head
   link(rel='stylesheet', href= url_for('/style/post.css'))
   link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css')
   link(rel='stylesheet', href= url_for('/style/common/jquery.fancybox.min.css'))
+  if theme.reading_progress && theme.reading_progress.enable
+    link(rel='stylesheet', href= url_for('/style/reading-progress.css'))
   script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js')
@@ -79,6 +81,18 @@ block content
                         script="(function() {var d = document, s = d.createElement('script');s.src = 'https://"+theme.comment_disqus.name+".disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();"
                         script(id="dsq-count-scr", src="//blog-pubgj2togw.disqus.com/count.js", async)
 block script
+    if theme.reading_progress && theme.reading_progress.enable
+        script.
+            window.readingProgressConfig = {
+                enable: true,
+                position: '#{theme.reading_progress.position || "top"}',
+                height: '#{theme.reading_progress.height || "3px"}',
+                color: '#{theme.reading_progress.color || ""}',
+                smooth: #{theme.reading_progress.smooth !== false},
+                postOnly: #{theme.reading_progress.post_only !== false},
+                adjustOnImageLoad: #{theme.reading_progress.adjust_on_image_load !== false}
+            };
+        script(src= url_for("/js/reading-progress.js"))
     if theme.image_zoom && theme.image_zoom.enable
         script(src= url_for("/js/jquery-3.6.1.min.js"))
         script(src= url_for("/js/jquery-fancybox.min.js"))

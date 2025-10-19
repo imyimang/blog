@@ -1,0 +1,36 @@
+/* Reading Progress Bar */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4ff, #00b8d4);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Dark mode support */
+.appearance-dark .reading-progress-bar {
+  background: linear-gradient(90deg, #00d4ff, #00f0ff);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+/* Light mode support */
+.appearance-light .reading-progress-bar {
+  background: linear-gradient(90deg, #0099cc, #00b8d4);
+  box-shadow: 0 0 8px rgba(0, 153, 204, 0.4);
+}
+
+/* Smooth animation */
+.reading-progress-bar.animating {
+  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide on print */
+@media print {
+  .reading-progress-bar {
+    display: none !important;
+  }
+}
