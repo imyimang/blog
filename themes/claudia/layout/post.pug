@@ -5,6 +5,9 @@ block append head
   link(rel='stylesheet', href= url_for('/style/common/jquery.fancybox.min.css'))
   if theme.reading_progress && theme.reading_progress.enable
     link(rel='stylesheet', href= url_for('/style/reading-progress.css'))
+  // Preload utterances for faster comment loading
+  if theme.comment_utteranc && theme.comment_utteranc.enable
+    link(rel='preload', href='https://utteranc.es/client.js', as='script')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js')
@@ -62,12 +65,12 @@ block content
                 if theme.comment_utteranc && theme.comment_utteranc.enable
                     article.mt-6.comment-container
                         script(
-                            async
                             repo= theme.comment_utteranc.repo
                             src= "https://utteranc.es/client.js"
                             label= theme.comment_utteranc.label
                             issue-term= theme.comment_utteranc.issue_term || "pathname"
                             theme= theme.comment_utteranc.theme || "preferred-color-scheme"
+                            crossorigin= "anonymous"
                         )
                 if theme.comment_valine && theme.comment_valine.enable
                     article.mt-6.comment-container#vcomments(
