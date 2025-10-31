@@ -9,6 +9,7 @@ block content
             .columns.is-marginless
                 section.column.is-12.is-flex.is-flex-direction-column.is-justify-content-center
                     h2.about-title= __('about')
+                    img.about-header-image(src='/about/about.webp' alt='About')
                     article!= page.content
 block append script
     script.

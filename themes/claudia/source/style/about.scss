@@ -12,6 +12,21 @@
     font-weight: normal;
   }
 
+  // About 頁面頂部圖片 - 只在手機版顯示
+  .about-header-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+
+    // 在電腦版隱藏
+    @media screen and (min-width: 769px) {
+      display: none;
+    }
+  }
+
   article {
     max-width: 100%;
     word-break: break-word;
