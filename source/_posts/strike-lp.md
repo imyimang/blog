@@ -65,7 +65,7 @@ Strike 主要風險來自交易者營利，如果交易者大幅營利，LP Pool
 據創始人 Shan 所說是因為當天 Strike 上 ADA 有大量的作多倉位，加上 ADA 大幅上漲，交易者倉位大賺導致 LP Pool 承擔損失
 ![alt text](images/20251101/image-14.webp)
 
-## bending.ai 實用小工具
+## bending\.ai 實用小工具
 [bending.ai](https://bending.ai) 是一個 Cardano 鏈上數據的小工具，我們可以透過它來查看 Strike 上的倉位和 LP Pool 情況
 
 我們連結錢包後就能在左側 **Strike Leaderboard** 的頁面查看各幣種在 Strike 上的倉位現況
