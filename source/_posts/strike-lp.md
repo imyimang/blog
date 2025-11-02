@@ -46,6 +46,9 @@ Strike 上的 Liquidity providers 是平台流動性池的提供者，將資金�
 
 LP 代幣的價值是浮動的，當流動性池賺錢時，LP 代幣就會變的更有價值
 
+左邊可以看到不同幣種的收益，可以選不同時間跨度
+![alt text](images/20251101/imagee.webp)
+
 ## 撤出流動性
 當你想要把錢從流動性池撤出時，只要到 **LIQUIDITY** 介面選擇 **Withdraw**
 ![alt text](images/20251101/image-7.webp)
