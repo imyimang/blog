@@ -1,5 +1,5 @@
 ---
-title: Strike Finance 是什麼?如何做為 Liquidity providers 獲取收益
+title: Strike Finance 是什麼？如何做為 Liquidity providers 獲取收益
 date: 2025-11-01 21:11:14
 tags: [Cardano]
 category: '幣圈'
