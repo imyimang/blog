@@ -50,7 +50,7 @@ comment_disqus:
 appearance: auto # Default value is auto
 
 # Miscellaneous
-favicon: images/favicon.ico
+favicon: images/favicon.png
 
 # Default theme color for Discord embeds
 default_theme_color: "#9cfff7"
