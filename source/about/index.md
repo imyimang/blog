@@ -7,6 +7,8 @@ layout: about
 
 我對區塊鏈和匿名網路的技術也很有興趣，歡迎找我討論！
 
+如果你喜歡我的內容，歡迎到 [<u>Donate</u>](/donate.html) 頁面贊助支持！
+
 <h2 style="font-weight: normal;">任職</h2>
 
 - [<u>超大咖網路企業社</u>](https://coffeehost.net) | 共同創辦人 (2024/2 – Now)
