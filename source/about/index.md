@@ -3,6 +3,10 @@ title: about
 date: 2025-01-30 00:00:00
 layout: about
 ---
+<p style="font-size: 1.1em; margin-bottom: 20px;">
+  <a href="/en/about"><u>English</u></a> | <strong>中文</strong>
+</p>
+
 嗨！我是個熱愛技術與資訊社群的開發者，你可以叫我 Lucas 或 yimang(意麵)，歡迎用 [<u>RSS</u>](/rss2.xml) 訂閱我的 Blog！
 
 我對區塊鏈和匿名網路的技術也很有興趣，歡迎找我討論！
