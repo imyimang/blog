@@ -1,5 +1,5 @@
 ---
-title: Friends
+title: 友站
 date: 2025-10-18 00:00:00
 layout: friends
 description: 我的友站連結，歡迎找我交換友站!
