@@ -44,10 +44,14 @@ html(lang=config.language class= `appearance-${ appearance }`)
     <!-- Open Graph Meta Tags -->
     - var ogTitle = page.title || pageTitle || config.title
     - if (is_tag()) ogTitle = 'Tag: ' + page.tag
-    - if (is_archive() && !page.title) ogTitle = '文章歸檔'
+    - if (is_month()) ogTitle = page.year + '年' + page.month + '月 - ' + config.title
+    - else if (is_year()) ogTitle = page.year + '年 - ' + config.title
+    - else if (is_archive() && !page.title) ogTitle = '文章歸檔'
     meta(property="og:title" content=ogTitle)
     - var ogDescription = page.excerpt || page.description
     - if (!ogDescription && is_tag()) ogDescription = '查看所有關於 ' + page.tag + ' 的文章'
+    - if (!ogDescription && is_month()) ogDescription = '查看 ' + page.year + '年' + page.month + '月 的歷史文章歸檔'
+    - if (!ogDescription && is_year()) ogDescription = '查看 ' + page.year + '年 的歷史文章歸檔'
     - if (!ogDescription && is_archive()) ogDescription = '查看所有歷史文章歸檔'
     - if (!ogDescription && is_category()) ogDescription = '查看所有 ' + page.category + ' 分類的文章'
     - ogDescription = ogDescription || (page.content ? page.content.replace(/<[^>]*>/g, '').substring(0, 100) + '...' : config.description)
