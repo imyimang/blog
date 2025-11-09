@@ -2,6 +2,7 @@
 title: about
 date: 2025-01-30 00:00:00
 layout: about
+description: Hi! I'm a developer who loves technology and the information community. You can call me Lucas or yimang. Feel free to subscribe to my blog via RSS!
 ---
 <p style="font-size: 1.1em; margin-bottom: 20px;">
   <strong>English</strong> | <a href="/about"><u>中文</u></a>

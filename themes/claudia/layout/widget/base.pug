@@ -42,8 +42,15 @@ html(lang=config.language class= `appearance-${ appearance }`)
     <!-- End Baidu Analytics -->
 
     <!-- Open Graph Meta Tags -->
-    meta(property="og:title" content=(page.title || config.title))
-    - var ogDescription = page.excerpt || page.description || (page.content ? page.content.replace(/<[^>]*>/g, '').substring(0, 100) + '...' : config.description)
+    - var ogTitle = page.title || pageTitle || config.title
+    - if (is_tag()) ogTitle = 'Tag: ' + page.tag
+    - if (is_archive() && !page.title) ogTitle = '文章歸檔'
+    meta(property="og:title" content=ogTitle)
+    - var ogDescription = page.excerpt || page.description
+    - if (!ogDescription && is_tag()) ogDescription = '查看所有關於 ' + page.tag + ' 的文章'
+    - if (!ogDescription && is_archive()) ogDescription = '查看所有歷史文章歸檔'
+    - if (!ogDescription && is_category()) ogDescription = '查看所有 ' + page.category + ' 分類的文章'
+    - ogDescription = ogDescription || (page.content ? page.content.replace(/<[^>]*>/g, '').substring(0, 100) + '...' : config.description)
     meta(property="og:description" content=ogDescription)
     meta(property="og:type" content=(is_post() ? "article" : "website"))
     meta(property="og:url" content=config.url + url_for(page.path))
@@ -75,9 +82,8 @@ html(lang=config.language class= `appearance-${ appearance }`)
     meta(name="twitter:card" content="summary_large_image")
     meta(name="twitter:site" content="@imyimang")
     meta(name="twitter:creator" content="@imyimang")
-    meta(name="twitter:title" content=(page.title || config.title))
-    - var twitterDescription = page.excerpt || page.description || (page.content ? page.content.replace(/<[^>]*>/g, '').substring(0, 100) + '...' : config.description)
-    meta(name="twitter:description" content=twitterDescription)
+    meta(name="twitter:title" content=ogTitle)
+    meta(name="twitter:description" content=ogDescription)
     
     if page.cover
       meta(name="twitter:image" content=config.url + '/' + page.cover)
