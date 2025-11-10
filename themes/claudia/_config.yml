@@ -55,11 +55,9 @@ favicon: images/favicon.png
 # Default theme color for Discord embeds
 default_theme_color: "#9cfff7"
 
-# Auto extract theme color from images
-auto_theme_color:
-  enable: true
-  # 如果設為 true，會從封面圖片或第一張圖片自動提取主要顏色作為 theme color
-  # 只有在文章沒有手動設定 theme_color 時才會生效
+# Auto extract theme color from images (已停用)
+# auto_theme_color:
+#   enable: false
 
 friend_links:
   widget_title: 鏡像站  # 側邊欄顯示的標題

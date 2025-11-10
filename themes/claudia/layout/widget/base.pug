@@ -163,8 +163,6 @@ html(lang=config.language class= `appearance-${ appearance }`)
           }
         };
       script(src= url_for("/js/loading-animation.js"))
-    if theme.auto_theme_color && theme.auto_theme_color.enable
-      script(src= url_for("/js/color-extractor.js"))
     block head
 
   body.is-flex.is-flex-direction-column(data-code-copy= theme.code_copy && theme.code_copy.enable ? 'true' : 'false')
