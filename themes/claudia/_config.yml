@@ -29,9 +29,23 @@ user:
 # documents: https://github.com/utterance/utterances
 # API config: https://utteranc.es/
 comment_utteranc:
-  enable: true
+  enable: false
   repo: imyimang/blog # your blog repo
 
+# documents: https://giscus.app/zh-TW
+# 請到 https://giscus.app/zh-TW 設定並取得以下參數
+comment_giscus:
+  enable: true
+  repo: imyimang/blog # 您的 GitHub 倉庫 (格式: 使用者名稱/倉庫名稱)
+  repo_id: R_kgDONxgEFg # 您的倉庫 ID (在 giscus.app 取得)
+  category: Announcements # 討論分類名稱 (建議使用 "Announcements")
+  category_id: DIC_kwDONxgEFs4CxpHt # 分類 ID (在 giscus.app 取得)
+  mapping: pathname # 頁面 ↔️ discussion 對應方式 (pathname, url, title, og:title)
+  reactions_enabled: 1 # 是否啟用主文章的反應 (1 = 啟用, 0 = 停用)
+  emit_metadata: 0 # 是否發送討論元數據 (1 = 啟用, 0 = 停用)
+  input_position: top # 留言框位置 (top = 上方, bottom = 下方)
+  theme: dark # 主題 (light, dark, preferred_color_scheme 等)
+  lang: zh-TW # 語言
 
 # documents: https://valine.js.org/quickstart.html
 comment_valine:

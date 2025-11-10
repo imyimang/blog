@@ -5,7 +5,10 @@ block append head
   link(rel='stylesheet', href= url_for('/style/common/jquery.fancybox.min.css'))
   if theme.reading_progress && theme.reading_progress.enable
     link(rel='stylesheet', href= url_for('/style/reading-progress.css'))
-  // Preload utterances for faster comment loading
+  // Preload giscus for faster comment loading
+  if theme.comment_giscus && theme.comment_giscus.enable
+    link(rel='preconnect', href='https://giscus.app')
+  // Preload utterances for faster comment loading (legacy)
   if theme.comment_utteranc && theme.comment_utteranc.enable
     link(rel='preload', href='https://utteranc.es/client.js', as='script')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js')
@@ -62,6 +65,24 @@ block content
                         a.button.is-default(href= url_for(page.next.path) title= page.next.title)
                             span.has-text-weight-semibold= nextContent
                             i.fa-solid.fa-arrow-right.ml-2.has-text-grey
+                if theme.comment_giscus && theme.comment_giscus.enable
+                    article.mt-6.comment-container
+                        script(
+                            src= "https://giscus.app/client.js"
+                            data-repo= theme.comment_giscus.repo
+                            data-repo-id= theme.comment_giscus.repo_id
+                            data-category= theme.comment_giscus.category
+                            data-category-id= theme.comment_giscus.category_id
+                            data-mapping= theme.comment_giscus.mapping || "pathname"
+                            data-strict= "0"
+                            data-reactions-enabled= theme.comment_giscus.reactions_enabled || "1"
+                            data-emit-metadata= theme.comment_giscus.emit_metadata || "0"
+                            data-input-position= theme.comment_giscus.input_position || "bottom"
+                            data-theme= theme.comment_giscus.theme || "preferred_color_scheme"
+                            data-lang= theme.comment_giscus.lang || "zh-TW"
+                            crossorigin= "anonymous"
+                            async
+                        )
                 if theme.comment_utteranc && theme.comment_utteranc.enable
                     article.mt-6.comment-container
                         script(
