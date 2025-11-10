@@ -95,7 +95,7 @@ description: 我的友站連結，歡迎找我交換友站!
   <a href="https://sangege.top/" target="_blank">
     <img src="https://www.gravatar.com/avatar/f6d0a62624d1d82d90ea3232e3663561?s=" alt="Friend Avatar" class="friend-avatar">
     <div class="friend-info">
-      <h3 class="friend-name">Sangege</h3>
+      <h3 class="friend-name">sangege</h3>
       <p class="friend-desc">24 年開始參加資訊社群的大學生</p>
     </div>
   </a>
