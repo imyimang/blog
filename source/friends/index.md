@@ -91,4 +91,24 @@ description: 我的友站連結，歡迎找我交換友站!
   </a>
 </div>
 
+<div class="friend-card">
+  <a href="https://sangege.top/" target="_blank">
+    <img src="https://www.gravatar.com/avatar/f6d0a62624d1d82d90ea3232e3663561?s=" alt="Friend Avatar" class="friend-avatar">
+    <div class="friend-info">
+      <h3 class="friend-name">Sangege</h3>
+      <p class="friend-desc">24 年開始參加資訊社群的大學生</p>
+    </div>
+  </a>
+</div>
+
+<div class="friend-card">
+  <a href="https://www.0944.me/" target="_blank">
+    <img src="https://avatars.githubusercontent.com/u/69704016?s=64&v=4" alt="Friend Avatar" class="friend-avatar">
+    <div class="friend-info">
+      <h3 class="friend-name">0944</h3>
+      <p class="friend-desc">不知道要寫什麼</p>
+    </div>
+  </a>
+</div>
+
 </div>
