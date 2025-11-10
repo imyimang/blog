@@ -1,0 +1,35 @@
+# Cloudflare Pages Redirects
+# Hexo 會將此檔案複製到 public/_redirects
+
+# 具體文章重新導向（有結尾斜線）
+/2025/02/20/assembly/ /posts/assembly 301
+/2025/01/30/HelloWorld/ /posts/HelloWorld 301
+/2025/02/03/0203幣圈史詩級暴跌/ /posts/0203幣圈史詩級暴跌 301
+/2025/02/07/安坑輕軌一日遊/ /posts/安坑輕軌一日遊 301
+/2025/02/17/MicroPython部屬網站/ /posts/MicroPython部屬網站 301
+/2025/03/29/come_back_march_29th/ /posts/come_back_march_29th 301
+/2025/04/01/italian-brainrot/ /posts/italian-brainrot 301
+/2025/04/14/zhonghe-8-views/ /posts/zhonghe-8-views 301
+/2025/06/02/在whonix安裝中文輸入法/ /posts/在whonix安裝中文輸入法 301
+/2025/06/03/架設Tor隱藏服務/ /posts/架設Tor隱藏服務 301
+/2025/07/28/fluent-reader-403/ /posts/fluent-reader-403 301
+/2025/08/01/tor-relay/ /posts/tor-relay 301
+
+# 具體文章重新導向（無結尾斜線）
+/2025/02/20/assembly /posts/assembly 301
+/2025/01/30/HelloWorld /posts/HelloWorld 301
+/2025/02/03/0203幣圈史詩級暴跌 /posts/0203幣圈史詩級暴跌 301
+/2025/02/07/安坑輕軌一日遊 /posts/安坑輕軌一日遊 301
+/2025/02/17/MicroPython部屬網站 /posts/MicroPython部屬網站 301
+/2025/03/29/come_back_march_29th /posts/come_back_march_29th 301
+/2025/04/01/italian-brainrot /posts/italian-brainrot 301
+/2025/04/14/zhonghe-8-views /posts/zhonghe-8-views 301
+/2025/06/02/在whonix安裝中文輸入法 /posts/在whonix安裝中文輸入法 301
+/2025/06/03/架設Tor隱藏服務 /posts/架設Tor隱藏服務 301
+/2025/07/28/fluent-reader-403 /posts/fluent-reader-403 301
+/2025/08/01/tor-relay /posts/tor-relay 301
+
+# 通用規則：將舊的日期格式重新導向到新的 posts 路徑
+# 注意：Cloudflare Pages 的 _redirects 不支援 :slug 等參數
+# 需要使用 splat (*) 來處理
+/2025/*/*/:splat /posts/:splat 301
