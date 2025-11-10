@@ -82,7 +82,7 @@ description: 我的友站連結，歡迎找我交換友站!
 </div>
 
 <div class="friend-card">
-  <a href="https://gowhite.com/" target="_blank">
+  <a href="https://godwhite.com/" target="_blank">
     <img src="https://godwhite.com/avatar.png" alt="Friend Avatar" class="friend-avatar">
     <div class="friend-info">
       <h3 class="friend-name">Godwhite</h3>
