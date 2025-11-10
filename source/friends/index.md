@@ -81,4 +81,14 @@ description: 我的友站連結，歡迎找我交換友站!
   </a>
 </div>
 
+<div class="friend-card">
+  <a href="https://gowhite.com/" target="_blank">
+    <img src="https://godwhite.com/avatar.png" alt="Friend Avatar" class="friend-avatar">
+    <div class="friend-info">
+      <h3 class="friend-name">Godwhite</h3>
+      <p class="friend-desc">白老闆！？</p>
+    </div>
+  </a>
+</div>
+
 </div>
