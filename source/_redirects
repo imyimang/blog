@@ -1,7 +1,10 @@
 # Cloudflare Pages Redirects
 # Hexo 會將此檔案複製到 public/_redirects
 
-# 具體文章重新導向（有結尾斜線）
+# 域名重新導向：將 blog.yimang.tw 導向 yimang.tw
+https://blog.yimang.tw/* https://yimang.tw/:splat 301
+
+# 具體文章重新導向(有結尾斜線)
 /2025/02/20/assembly/ /posts/assembly 301
 /2025/01/30/HelloWorld/ /posts/HelloWorld 301
 /2025/02/03/0203幣圈史詩級暴跌/ /posts/0203幣圈史詩級暴跌 301
