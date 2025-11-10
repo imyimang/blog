@@ -26,13 +26,34 @@
     .tag.post-item-tag {
       margin-right: 5px;
 
-      font-weight: bold;
-      color: darkorange;
+      font-weight: normal;
+      color: var(--second-text-color);
       font-style: normal;
 
-      border-radius: 10px;
+      border-radius: 0;
       background: transparent;
-      border: 2px solid darkorange;
+      border: none;
+      transition: all 0.2s ease;
+      display: inline-block;
+      
+      &::before {
+        content: '#';
+        margin-right: 2px;
+      }
+      
+      &:hover {
+        color: rgb(144 247 236 / 1);
+        transform: translateY(-2px);
+      }
+    }
+
+    // 鏡像站專用樣式
+    .friend-widget .tag.post-item-tag {
+      &::before {
+        content: '🔗';
+        margin-right: 4px;
+        filter: grayscale(100%);
+      }
     }
 
     .button.is-default {
