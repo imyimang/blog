@@ -2,6 +2,7 @@ extends widget/base
 
 block append head
     link(rel='stylesheet', href= url_for("/style/widget-post-list.css"))
+    link(rel='stylesheet', href= url_for("/style/archive.css"))
 
 block topic
     -
@@ -23,10 +24,43 @@ block topic
     span= archiveLabel
 
 block content
-    include widget/widget-post-list
-        block sidebar
-            div(style="position: sticky; top: 50px;")
-                include widget/widget-archives
+    // Mobile collapsible archive
+    .mobile-archive-container.is-hidden-tablet.section.container.is-max-widescreen.px-3
+        -
+            var posts = site.posts.sort('date', -1).toArray()
+            var yearMap = {}
+            posts.forEach(function(post) {
+                var year = post.date.format('YYYY')
+                if (!yearMap[year]) {
+                    yearMap[year] = []
+                }
+                yearMap[year].push(post)
+            })
+            var years = Object.keys(yearMap).sort().reverse()
+        
+        .timeline-container
+            each year in years
+                .timeline-year-section
+                    .timeline-year-header
+                        .timeline-dot
+                        .timeline-year-title #{year}
+                        .timeline-post-count #{yearMap[year].length}
+                    .timeline-posts
+                        each post in yearMap[year]
+                            - var monthDay = post.date.format('MM-DD')
+                            a.timeline-post-link(href=url_for(post.path))
+                                .timeline-post-item
+                                    .timeline-post-date #{monthDay}
+                                    .timeline-post-title= post.title
+    
+    // Desktop version
+    .is-hidden-mobile
+        include widget/widget-post-list
+            block sidebar
+                div(style="position: sticky; top: 50px;")
+                    include widget/widget-archives
+
+block append script
 
 
 

@@ -8,13 +8,38 @@
   padding: 0;
 }
 
+/* Light mode - explicit default */
+:root.appearance-light .friend-card,
+:root:not(.appearance-dark):not(.appearance-auto) .friend-card,
 .friend-card {
-  background: var(--card-bg, #fff);
+  background: #fff !important;
+  border-color: #e1e4e8 !important;
+}
+
+:root.appearance-light .friend-name,
+:root:not(.appearance-dark):not(.appearance-auto) .friend-name,
+.friend-name {
+  color: #24292e !important;
+}
+
+:root.appearance-light .friend-desc,
+:root:not(.appearance-dark):not(.appearance-auto) .friend-desc,
+.friend-desc {
+  color: #586069 !important;
+}
+
+:root.appearance-light .friend-avatar,
+:root:not(.appearance-dark):not(.appearance-auto) .friend-avatar,
+.friend-avatar {
+  border-color: #e1e4e8 !important;
+}
+
+.friend-card {
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--border-color, #e1e4e8);
+  border: 1px solid #e1e4e8;
 }
 
 .friend-card:hover {
@@ -40,19 +65,14 @@
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  border: 2px solid var(--border-color, #e1e4e8);
-}
-
-.friend-info {
-  flex: 1;
-  min-width: 0;
+  border: 2px solid #e1e4e8;
 }
 
 .friend-name {
   margin: 0 0 5px 0;
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-color, #24292e);
+  color: #24292e;
   white-space: nowrap;
   overflow: visible;
   text-overflow: ellipsis;
@@ -62,7 +82,7 @@
 .friend-desc {
   margin: 0;
   font-size: 0.9rem;
-  color: var(--text-secondary, #586069);
+  color: #586069;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -71,23 +91,47 @@
   overflow: hidden;
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .friend-card {
-    --card-bg: #1c1c1e;
-    --border-color: #38383a;
-    --text-color: #f5f5f7;
-    --text-secondary: #98989d;
-  }
+.friend-info {
+  flex: 1;
+  min-width: 0;
 }
 
-/* Dark mode class support */
-body.dark-mode .friend-card,
-body[data-theme="dark"] .friend-card {
-  --card-bg: #1c1c1e;
-  --border-color: #38383a;
-  --text-color: #f5f5f7;
-  --text-secondary: #98989d;
+/* Dark Mode Support - only apply when explicitly dark */
+:root.appearance-dark .friend-card {
+  background: #1c1c1e !important;
+  border-color: #38383a !important;
+}
+
+:root.appearance-dark .friend-name {
+  color: #f5f5f7 !important;
+}
+
+:root.appearance-dark .friend-desc {
+  color: #98989d !important;
+}
+
+:root.appearance-dark .friend-avatar {
+  border-color: #38383a !important;
+}
+
+/* Auto mode - dark */
+@media (prefers-color-scheme: dark) {
+  :root.appearance-auto .friend-card {
+    background: #1c1c1e !important;
+    border-color: #38383a !important;
+  }
+  
+  :root.appearance-auto .friend-name {
+    color: #f5f5f7 !important;
+  }
+  
+  :root.appearance-auto .friend-desc {
+    color: #98989d !important;
+  }
+  
+  :root.appearance-auto .friend-avatar {
+    border-color: #38383a !important;
+  }
 }
 
 /* Responsive Design */

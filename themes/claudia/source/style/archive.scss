@@ -3,3 +3,169 @@
 .archive-page {
   height: 100%;
 }
+
+// Mobile timeline archive styles
+.mobile-archive-container {
+  padding-top: 20px;
+  
+  .timeline-container {
+    position: relative;
+    
+    // Vertical timeline line
+    &::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border-line-color);
+    }
+  }
+  
+  .timeline-year-section {
+    position: relative;
+    margin-bottom: 24px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .timeline-year-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  
+  .timeline-dot {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--second-bg-color);
+    border: 3px solid var(--primary-text-color);
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  
+  .timeline-year-title {
+    margin-left: 16px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    letter-spacing: 0.5px;
+  }
+  
+  .timeline-post-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 10px;
+    margin-left: 12px;
+    background: var(--third-bg-color);
+    color: var(--second-text-color);
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .timeline-posts {
+    margin-left: 8px;
+    padding-left: 28px;
+    position: relative;
+  }
+  
+  .timeline-post-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--second-bg-color);
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    position: relative;
+    
+    // Connection line to timeline
+    &::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 20px;
+      width: 20px;
+      height: 2px;
+      background: var(--border-line-color);
+    }
+    
+    // Small dot
+    &::after {
+      content: '';
+      position: absolute;
+      left: -34px;
+      top: 17px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--second-text-color);
+      border: 2px solid var(--second-bg-color);
+    }
+  }
+  
+  .timeline-post-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 8px;
+    
+    &:hover .timeline-post-item {
+      background: var(--third-bg-color);
+      transform: translateX(4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+                  0 0 15px rgba(135, 206, 250, 0.3),
+                  0 0 30px rgba(173, 216, 230, 0.15);
+      border-color: rgba(135, 206, 250, 0.4);
+      
+      .timeline-post-title {
+        color: rgb(144 247 236 / 1);
+      }
+    }
+  }
+  
+  .timeline-post-date {
+    flex-shrink: 0;
+    width: 48px;
+    font-size: 13px;
+    color: var(--second-text-color);
+    opacity: 0.8;
+    font-weight: 500;
+    margin-right: 16px;
+    padding-top: 1px;
+  }
+  
+  .timeline-post-title {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    line-height: 1.5;
+    transition: color 0.2s ease;
+  }
+  
+  // Dark mode support for borders
+  @media (prefers-color-scheme: dark) {
+    .timeline-post-item {
+      border-color: #38383a;
+    }
+  }
+}
+
+body.dark-mode,
+body[data-theme="dark"] {
+  .timeline-post-item {
+    border-color: #38383a;
+  }
+}
