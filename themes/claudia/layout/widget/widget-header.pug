@@ -24,3 +24,173 @@ header.is-flex.header-widget.is-flex-shrink-0.is-align-items-center.is-justify-c
         button.theme-toggle.is-flex.is-align-items-center.is-justify-content-center(id="theme-toggle-mobile" title="切換深色/淺色模式")
             i.fas.fa-moon(id="theme-icon-mobile")
 
+// Mobile search bar (only on home page)
+if is_home()
+    .mobile-search-container.is-hidden-tablet
+        .mobile-search-widget.is-relative
+            .mobile-search-input-wrapper.is-flex.px-3.py-2
+                i.fa-solid.fa-magnifying-glass.mr-2
+                input#mobileSearchInput.mobile-search-input.is-flex-grow-1(placeholder= _p('search_input_placeholder'))
+            section#mobileSearchContent.mobile-search-content.content
+
+script.
+    (function() {
+        var mobileSearchDatabase = []
+        var mobileSearchInputEl = document.getElementById('mobileSearchInput')
+        var mobileSearchResultEl = document.getElementById('mobileSearchContent')
+        var mobileSearchLoaded = false
+
+        if (!mobileSearchInputEl) return
+
+        mobileSearchInputEl.oninput = function (evt) {
+            var searchValue = evt.target.value
+            var haveSearchValue = Boolean(searchValue.trim())
+            
+            if (!haveSearchValue) {
+                mobileSearchResultEl.style.height = '0'
+                mobileSearchResultEl.innerHTML = ''
+                return
+            }
+
+            var searchResults = mobileSearching(searchValue)
+
+            if (searchResults.length > 0) {
+                mobileRenderSearchResults(searchResults)
+            } else {
+                mobileRenderNoResults()
+            }
+        }
+
+        mobileSearchInputEl.onfocus = function() {
+            if (mobileSearchLoaded) return
+            
+            fetch(window.location.origin + '/search.xml')
+                .then(res => res.text())
+                .then(res => {
+                    var domparser = new DOMParser()
+                    var doc = domparser.parseFromString(res, 'application/xml')
+                    mobileSearchDatabase = doc.getElementsByTagName('search')[0].children
+                    mobileSearchLoaded = true
+                })
+                .catch(err => console.error('Failed to load search data:', err))
+        }
+
+        function mobileRenderSearchResults(results) {
+            mobileSearchResultEl.innerHTML = ''
+            var fragment = document.createDocumentFragment()
+
+            results.forEach(function (item) {
+                var link = document.createElement('a')
+                var title = document.createElement('h5')
+                var content = document.createElement('p')
+
+                title.innerHTML = mobileHighlightText(item.title, item.searchKeys)
+                content.innerHTML = mobileHighlightText(item.content, item.searchKeys)
+
+                link.href = item.link
+                link.appendChild(title)
+                link.appendChild(content)
+
+                fragment.appendChild(link)
+            })
+
+            mobileSearchResultEl.appendChild(fragment)
+            mobileSearchResultEl.style.height = 'auto'
+        }
+
+        function mobileRenderNoResults() {
+            mobileSearchResultEl.innerHTML = ''
+            var noResultsDiv = document.createElement('div')
+            noResultsDiv.style.padding = '16px'
+            noResultsDiv.style.textAlign = 'center'
+            noResultsDiv.style.color = 'var(--second-text-color)'
+            
+            var language = document.documentElement.lang || 'en'
+            var noResultsText = language.includes('zh') ? '沒有找到相關結果' : 'No results found'
+            noResultsDiv.innerText = noResultsText
+            
+            mobileSearchResultEl.appendChild(noResultsDiv)
+            mobileSearchResultEl.style.height = 'auto'
+        }
+
+        function mobileHighlightText(text, searchKeys) {
+            var highlightedText = text
+            searchKeys.forEach(function(key) {
+                var regex = new RegExp('(' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi')
+                highlightedText = highlightedText.replace(regex, '<span class="search-highlight">$1</span>')
+            })
+            return highlightedText
+        }
+
+        function mobileRemoveCodeBlocks(content) {
+            content = content.replace(/```[\s\S]*?```/g, ' ')
+            content = content.replace(/`[^`]*`/g, ' ')
+            content = content.replace(/<code[^>]*>[\s\S]*?<\/code>/gi, ' ')
+            content = content.replace(/<pre[^>]*>[\s\S]*?<\/pre>/gi, ' ')
+            return content
+        }
+
+        function mobileSearching(inputText) {
+            var inputTexts = inputText.trim().split(' ').filter(function(text) {
+                return text.trim() !== ''
+            })
+            var searchResults = []
+            var addedItems = new Set()
+
+            inputTexts.forEach(function (searchKey) {
+                var key = searchKey.toLowerCase()
+
+                for (var i = 0; i < mobileSearchDatabase.length; i++) {
+                    var entry = mobileSearchDatabase[i]
+                    var title = entry.getElementsByTagName('title')[0].textContent
+                    var link = entry.getElementsByTagName('link')[0].getAttribute('href')
+                    var contentWithTags = entry.getElementsByTagName('content')[0].textContent
+                    
+                    var contentWithoutCode = mobileRemoveCodeBlocks(contentWithTags)
+                    var rawContent = contentWithoutCode.trim().replace(/<[^>]+>/g, '').toLowerCase()
+
+                    var titleMatch = title.toLowerCase().indexOf(key) > -1
+                    var contentMatch = rawContent.indexOf(key) > -1
+
+                    if ((titleMatch || contentMatch) && !addedItems.has(link)) {
+                        var LENGTH = 60
+                        var finalContent = ''
+                        var contentLength = rawContent.length
+                        var searchResultIdx = rawContent.indexOf(key)
+
+                        var startIdx = searchResultIdx - 15
+                        var endIdx = startIdx + LENGTH
+
+                        if (startIdx < 0) {
+                            startIdx = 0
+                            endIdx = 80
+                        }
+
+                        if (endIdx > contentLength) {
+                            endIdx = contentLength
+                        }
+
+                        finalContent = rawContent.substring(startIdx, endIdx)
+
+                        searchResults.push({
+                            link: link,
+                            title: title,
+                            content: finalContent,
+                            searchKeys: inputTexts
+                        })
+                        addedItems.add(link)
+                    }
+                }
+            })
+            return searchResults
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileSearchInputEl.contains(e.target) && !mobileSearchResultEl.contains(e.target)) {
+                mobileSearchResultEl.style.height = '0'
+            }
+        })
+    })()
+
+

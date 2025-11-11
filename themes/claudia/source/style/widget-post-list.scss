@@ -4,6 +4,11 @@ $coverMaxHeight: 360px;
 $coverBlurEffect: 20px;
 
 .post-container {
+  // Add extra padding on mobile when search bar is present (home page)
+  @media screen and (max-width: 768px) {
+    padding-top: 45px;
+  }
+  
   .post-item-card {
     margin-bottom: 15px;
 
