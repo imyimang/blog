@@ -19,7 +19,7 @@ If you like my content, welcome to support me on the [<u>Donate</u>](/donate.htm
 
 <h2 style="font-weight: normal;">Employment</h2>
 
-- [<u>CoffeeHost</u>](https://coffeehost.net) | Co-Founder (2024/2 – Now)
+- [<u>Coffee Host</u>](https://coffeehost.net) | Co-Founder (2024/2 – Now)
 
 <h2 style="font-weight: normal;">Campus Experience</h2>
 

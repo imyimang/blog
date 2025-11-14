@@ -9,6 +9,14 @@ block content
             .columns.is-marginless
                 section.column.is-12.is-flex.is-flex-direction-column.is-justify-content-center
                     article!= page.content
+                    .friends-container
+                        each friend in site.data.friends
+                            .friend-card
+                                a(href=friend.link target='_blank')
+                                    img.friend-avatar(src=friend.avatar alt='Friend Avatar')
+                                    .friend-info
+                                        h3.friend-name= friend.name
+                                        p.friend-desc= friend.desc
 block append script
     script.
         $claudia.fadeInImage()
