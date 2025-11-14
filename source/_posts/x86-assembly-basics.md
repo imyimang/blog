@@ -1,7 +1,7 @@
 ---
 title: 在Windows VSCode上執行32-bit x86 Assembly程式
 date: 2025-02-20 22:56:14
-tag: [Assembly]
+tags: [Assembly]
 category: '技術'
 ---
 我們需要安裝兩個東西，NASM 和 GCC，用來將 .asm 程式編譯成 Object file，並連結成可執行檔案

@@ -2,7 +2,7 @@
 title: Zebec card 開卡教學
 date: 2025-08-17 22:10:15
 category: '幣圈'
-tags: '支付'
+tags: [支付]
 excerpt: '詳細教學如何註冊和使用 Zebec card 這張免 KYC 免月費免手續費的幣圈卡'
 ---
 ## Zebec Network 是什麼
