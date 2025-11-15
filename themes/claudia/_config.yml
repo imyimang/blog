@@ -26,12 +26,6 @@ user:
   description: 
   footnotes: # footnotes
 
-# documents: https://github.com/utterance/utterances
-# API config: https://utteranc.es/
-comment_utteranc:
-  enable: false
-  repo: imyimang/blog # your blog repo
-
 # documents: https://giscus.app/zh-TW
 # 請到 https://giscus.app/zh-TW 設定並取得以下參數
 comment_giscus:
@@ -47,17 +41,6 @@ comment_giscus:
   theme: dark # 主題 (light, dark, preferred_color_scheme 等)
   lang: zh-TW # 語言
 
-# documents: https://valine.js.org/quickstart.html
-comment_valine:
-  enable: false
-  appId:
-  appKey:
-
-comment_disqus:
-    enable: false
-    url:  # the url of your website main domain like this https://xxx.xxx/
-    name: # the short name in disqus
-
 # dark
 # light
 # user-can-set
@@ -69,10 +52,6 @@ favicon: images/favicon.png
 # Default theme color for Discord embeds
 default_theme_color: "#9cfff7"
 
-# Auto extract theme color from images (已停用)
-# auto_theme_color:
-#   enable: false
-
 friend_links:
   widget_title: 鏡像站  # 側邊欄顯示的標題
   links:
@@ -80,12 +59,6 @@ friend_links:
       link: http://fkjngxazkeuor6hb6pcovvta4we6u4l6iuetcguq7c4wvccxt2xmexqd.onion/
     - title: I2P鏡像站
       link: http://wis7rxcbe3kxsyx5ftothlttml62o6p4u4rasarmvda5lp2u6qxq.b32.i2p/
-# Google Analytics
-ga_track_id:
-ga_domain:
-
-# Baidu Analytics
-ba_track_id:
 
 # picture of about page
 about_pic: images/about.webp

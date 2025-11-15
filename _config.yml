@@ -121,14 +121,6 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: claudia
 
-# Theme configuration
-theme_config:
-  social:
-    x: imyimang
-    instagram: yimang__
-    github: imyimang
-    telegram: imyimang
-
 # RSS Feed
 feed:
   enable: true
@@ -169,10 +161,6 @@ sitemap:
   rel: false
   tags: true
   categories: true
-
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
 
 # Minifier
 ## Docs: https://github.com/chenzhutian/hexo-all-minifier
