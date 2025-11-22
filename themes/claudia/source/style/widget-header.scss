@@ -74,7 +74,9 @@
     height: 0;
     max-height: 60vh;
     overflow: auto;
-    background: var(--second-bg-color);
+    background: var(--top-bar-bg-color);
+    backdrop-filter: blur(var(--backdropFilter));
+    -webkit-backdrop-filter: blur(var(--backdropFilter));
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     
     a {
