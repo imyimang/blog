@@ -4,92 +4,92 @@ date: 2025-04-01 21:00:13
 tags:
 category: '指南'
 ---
-關於Italian Brainrot迷因一些常見人物的整理，以及如何精通reels題目
+關於Italian Brainrot迷因一些常見人物的整理,以及如何精通reels題目
 
 
-# 常見角色
-## Tralalero Tralala
+## 常見角色
+### Tralalero Tralalaa
 ![alt text](images/20250401/image.webp)
 
-## Bombardino Crocodilo
+### Bombardino Crocodilo
 ![alt text](images/20250401/image-1.webp)
 
-## Bombombini Gousini
+### Bombombini Gousini
 ![alt text](images/20250401/image-2.webp)
 
-## Lirili Larila
+### Lirili Larila
 ![alt text](images/20250401/image-3.webp)
 
-## Giraffa Meloniera
+### Giraffa Meloniera
 ![alt text](images/20250401/image-4.webp)
 
-## Tripi Tropi
+### Tripi Tropi
 ![alt text](images/20250401/image-5.webp)
 
-## Trulimero Trulichina
+### Trulimero Trulichina
 ![alt text](images/20250401/image-6.webp)
 
-## Frigo Camello
+### Frigo Camello
 ![alt text](images/20250401/image-7.webp)
 
-## Schimpanzini Bananini
+### Schimpanzini Bananini
 ![alt text](images/20250401/image-8.webp)
 
-## Boneca Ambalabu
+### Boneca Ambalabu
 ![alt text](images/20250401/image-9.webp)
 
-## Brr Brr Batabim
+### Brr Brr Batabim
 ![alt text](images/20250401/image-12.webp)
 
-## Tung Tung Tung Sahur
+### Tung Tung Tung Sahur
 ![alt text](images/20250401/image-11.webp)
 
-## Cappucino Assasino
+### Cappucino Assasino
 ![alt text](images/20250401/image-13.webp)
 
-## La Vaca Saturno Saturnita
+### La Vaca Saturno Saturnita
 ![alt text](images/20250401/image-14.webp)
 
-## Burbaloni Luliloil
+### Burbaloni Luliloil
 ![alt text](images/20250401/it-3.webp)
 
-## Giraffa Celeste
+### Giraffa Celeste
 ![alt text](images/20250401/image-15.webp)
 
-## il Cacto Hipoptoma
+### il Cacto Hipoptoma
 ![alt text](images/20250401/image-16.webp)
 
-## Zibra Zubra
+### Zibra Zubra
 ![alt text](images/20250401/image-17.webp)
 
-## Blueberrini Octupussini
+### Blueberrini Octupussini
 ![alt text](images/20250401/image-18.webp)
 
-## Penguinator Termoregulator
+### Penguinator Termoregulator
 ![alt text](images/20250401/it-5.webp)
 
-## Bobrito Bandito
+### Bobrito Bandito
 ![alt text](images/20250401/b.webp)
 
-## Clolchito Drestalchito
+### Clolchito Drestalchito
 ![alt text](images/20250401/it-7.webp)
 
-## Pipi Potato
+### Pipi Potato
 ![alt text](images/20250401/it-8.webp)
 
-## Gorillo Watermellondrillo
+### Gorillo Watermellondrillo
 ![alt text](images/20250401/it-9.webp)
 
 還有太多太多就不全放了
 
-# 猜題策略
-Italian Brainrot基本上是記不完的，如果看到以下這種題目該怎麼辦
+## 猜題策略
+Italian Brainrot基本上是記不完的,如果看到以下這種題目該怎麼辦
 ![alt text](images/20250401/it-2.webp)
-其實只要記住其中幾個詞，其他大部分都是重複排列組合的
+其實只要記住其中幾個詞,其他大部分都是重複排列組合的
 
-例如 Bombombini Gousini，Bombombini就是類似轟炸機，Gousini就是鵝
+例如 Bombombini Gousini,Bombombini就是類似轟炸機,Gousini就是鵝
 
-## 常見單字
+### 常見單字
 Bombombini、Bombardiro - 類似飛機或轟炸機
 Bananinni - 香蕉
 Crocadilo - 鱷魚
@@ -102,7 +102,7 @@ Bambino - 小孩的
 像這隻叫Lin Lin Lin Gan-Gan Guli Wacha
 ![alt text](images/20250401/it-4.webp)
 
-# 資料來源
+## 資料來源
 https://www.youtube.com/watch?v=MLpmiywRNzY
 https://www.youtube.com/watch?v=nxSbhVnwdFw
 https://www.youtube.com/watch?v=8Jx3tUcsNz8
