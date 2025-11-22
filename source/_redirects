@@ -9,6 +9,7 @@
 /posts/MicroPython部屬網站 /posts/micropython-web-deployment 301
 /posts/在whonix安裝中文輸入法 /posts/whonix-chinese-input-method 301
 /posts/架設Tor隱藏服務 /posts/setup-tor-hidden-service 301
+/posts/Zebec-card /posts/zebec-card 301
 
 /posts/assembly/ /posts/x86-assembly-basics/ 301
 /posts/HelloWorld/ /posts/hello-world-first-post/ 301
@@ -17,6 +18,7 @@
 /posts/MicroPython部屬網站/ /posts/micropython-web-deployment/ 301
 /posts/在whonix安裝中文輸入法/ /posts/whonix-chinese-input-method/ 301
 /posts/架設Tor隱藏服務/ /posts/setup-tor-hidden-service/ 301
+/posts/Zebec-card/ /posts/zebec-card/ 301
 
 # 通用規則：將舊的日期格式重新導向到新的 posts 路徑
 # 注意：Cloudflare Pages 的 _redirects 不支援 :slug 等參數
