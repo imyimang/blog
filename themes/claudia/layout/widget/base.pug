@@ -109,7 +109,7 @@ html(lang=config.language class= `appearance-${ appearance }`)
     link(rel="stylesheet" href= url_for('/style/common/bulma.css'))
     link(rel="stylesheet" href= url_for('/style/base.css'))
     link(rel="stylesheet" href= url_for('/style/common/helper.css'))
-    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous")
+    // KaTeX will be loaded on-demand via markdown-it-plus when needed
     if theme.loading_animation && theme.loading_animation.enable
       link(rel="stylesheet" href= url_for('/style/loading-animation.css'))
     
@@ -119,6 +119,7 @@ html(lang=config.language class= `appearance-${ appearance }`)
     
     script(src= url_for("/js/common.js"))
     script(src= url_for("/js/theme-toggle.js"))
+    script(src= url_for("/js/katex-loader.js") defer)
     if theme.loading_animation && theme.loading_animation.enable
       script.
         window.loadingAnimationConfig = {
