@@ -86,6 +86,8 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  指南: guide
+  雜記: misc
   技術: tech
   遊記: travel
   幣圈: crypto
